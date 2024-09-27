@@ -7,6 +7,11 @@ def fib_recursive(n):
 
     return fib_recursive(n-1) + fib_recursive(n-2)
 
+def fib_recursive_cache(n):
+    if not n in cache:
+        cache[n] = fib_recursive_cache(n-1) + fib_recursive_cache(n-2)
+    return cache[n]
+
 def fib_iterative(n):
     old, new = 0, 1
     
@@ -28,7 +33,8 @@ if __name__ == "__main__":
     # print(f"RECURSIVE: {fib_recursive(6)}")
     # print(f"ITERATIVE: {fib_iterative(6)}")
 
-    test_values = [2, 5, 10, 20 ]
+    test_values = [2, 5, 10, 50 ]
+
     print("Recursive")
     for i in test_values:
         start =  timeit.time.perf_counter_ns()
@@ -39,4 +45,11 @@ if __name__ == "__main__":
     for i in test_values:
         start =  timeit.time.perf_counter_ns()
         fib_iterative(i)
+        print(f"i: {i}  {timeit.time.perf_counter_ns() - start}")
+
+    print("Cache")
+    cache = {0:0, 1:1}
+    for i in test_values:
+        start =  timeit.time.perf_counter_ns()
+        fib_recursive_cache(i)
         print(f"i: {i}  {timeit.time.perf_counter_ns() - start}")
