@@ -2,11 +2,11 @@
 def factorial(n):
     if(DEBUG): print(f"n: {n}")
 
-    # No base case for 0 or negative numbers
-    if n < 1:
+    # No base case for negative numbers
+    if n < 0:
         exit()
 
-    if n == 1:
+    if n == 0:
         return 1
     else:
         res = n * factorial(n-1)
@@ -17,4 +17,4 @@ if __name__ == "__main__":
     DEBUG = True
     
     for i in range(1,5):
-        print(f"RESULT: f: {i} {factorial(i)}")
+        print(f"RESULT: i: {i}  value: {factorial(i)}")
