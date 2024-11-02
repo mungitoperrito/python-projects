@@ -1,4 +1,3 @@
-
 def factorial(n):
     if(DEBUG): print(f"n: {n}")
 
@@ -17,4 +16,5 @@ if __name__ == "__main__":
     DEBUG = True
     
     for i in range(1,5):
+
         print(f"RESULT: i: {i}  value: {factorial(i)}")
