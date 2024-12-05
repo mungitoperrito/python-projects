@@ -35,10 +35,10 @@ print('')
 print('')
 
 # Update
-var_str1 = 'abcd'                  # Creates new variable w/ same name
-var_str2 = 'abcd'                 
-var_int1 = 1234                    # Creates new variable w/ same name
-var_int2 = 1234                    
+var_str1 = 'abc' + 'd'             # Creates new variable w/ same name
+var_str2 = 'abc' + 'd'                  
+var_int1 = 123 + 1                 # Creates new variable w/ same name
+var_int2 = 123 + 1            
 var_list1 = ['a', 'b', 'c', 'd']   # Creates new variable w/ same name
 var_list2 = ['a', 'b', 'c', 'd']   # Creates new variable w/ same name
 var_list3 = var_list2
