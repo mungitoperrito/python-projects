@@ -28,6 +28,9 @@ print('lists original')
 for l in lsts1:
     print(f"{id(l)}:   {l}")
 print('')
+var_list2.append('f')
+print(f"{id(var_list2)}:   {var_list2}")
+print('')
 
 print('')
 
@@ -59,6 +62,9 @@ print('')
 print('lists updated')
 for l in lsts2:
     print(f"{id(l)}:   {l}")
+print('')
+var_list2.append('f')
+print(f"{id(var_list2)}:   {var_list2}")
 print('')
 
 print('')
