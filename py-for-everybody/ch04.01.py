@@ -1,5 +1,5 @@
 # https://www.py4e.com/html3/04-functions
-# Exercise 3
+# Exercise 1
 
 ''' Original
 def print_lyrics():
