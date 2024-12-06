@@ -21,7 +21,8 @@ def get_input():
 
 def print_stats(lst):
     print(f"list: {lst}")
-    print(f"Total: {sum(lst)} count: {len(lst)} ave: {sum(lst)/len(lst)}")
+    print(f"Total: {sum(lst)} count: {len(lst)}", end='')
+    print(f" ave: {sum(lst)/len(lst)}, min: {min(lst)}  max: {max(lst)}")
 
 
 ############
