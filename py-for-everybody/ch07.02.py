@@ -28,7 +28,15 @@ def find_numbers(file_handle):
             num_string = line.rstrip().split(':')[1]
             found_numbers.append(float(num_string))
 
-    return found_numbers        
+    return found_numbers
+
+def average_value(num_list):
+    total_number = len(num_list)
+    total_sum = 0
+    for v in num_list:
+        total_sum += v
+
+    return total_sum / total_number
 
 ############
 ### MAIN ###
@@ -36,4 +44,4 @@ def find_numbers(file_handle):
 filename = get_args()
 fh = get_file_handle(filename)
 numbers = find_numbers(fh)
-print(numbers)
+print(average_value(numbers))
