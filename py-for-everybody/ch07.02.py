@@ -32,9 +32,7 @@ def find_numbers(file_handle):
 
 def average_value(num_list):
     total_number = len(num_list)
-    total_sum = 0
-    for v in num_list:
-        total_sum += v
+    total_sum = sum(num_list)
 
     return total_sum / total_number
 
