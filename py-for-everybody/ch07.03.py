@@ -1,5 +1,5 @@
 # https://www.py4e.com/html3/07-files
-# Exercise 2
+# Exercise 3
 
 import sys
 
