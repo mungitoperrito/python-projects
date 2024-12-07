@@ -2,13 +2,19 @@
 # Exercise 1
 
 import sys
-FILENAME = sys.argv[1]
+
+def get_args():
+    if len(sys.argv) != 2:
+        print('Needs a filename')
+        exit()
+
+    return sys.argv[1]
 
 def get_file_handle(filename):
     try:
-        fh = open(FILENAME)
+        fh = open(filename)
     except Exception as e:
-        print(f"Can't open file: {FILENAME}")
+        print(f"Can't open file: {filename}")
         print(e)
         exit()
 
@@ -17,4 +23,5 @@ def get_file_handle(filename):
 ############
 ### MAIN ###
 ############
-fh = get_file_handle(FILENAME)
+filename = get_args()
+fh = get_file_handle(filename)
