@@ -25,10 +25,11 @@ def get_words(file_handle):
     this_line = []
 
     for line in fh:
-        this_line = line.split().lower()
+        this_line = line.split()
         for word in this_line:
-            words[word] += words.get(word, 0) + 1
-    
+            word = word.lower()
+            words[word] = words.get(word, 0) + 1
+
     return words
 
 ############
@@ -37,4 +38,10 @@ def get_words(file_handle):
 filename = get_args()
 fh = get_file_handle(filename)
 words_in_file = get_words(fh)
-print(list(words.keys).sort())
+word_list = list(words_in_file.keys())
+word_list.sort()
+
+# print(word_list)
+
+print(f"Is 'test' in word_list: {'test' in word_list}")
+print(f"Is 'amounts' in word_list: {'amounts' in word_list}")
