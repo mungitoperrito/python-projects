@@ -7,6 +7,6 @@ This repo contains scraps and artifacts of Python code.
 - Weaviate bits and pieces
   - [Ollama driven crossword puzzle genertor](https://github.com/mungitoperrito/wrk-weaviate-ollama/tree/main)
   - [API driven crossword puzzle generator](https://github.com/mungitoperrito/wrk-crossword-api/tree/main)
-  - [Weviate tutorial walkthrough](weaviate)
+  - [Tutorial walkthrough](/weaviate/multi-tenant-walkthrough.ipynb)
   - [Exploration and debugging code](/weaviate/recreate-tenant-removal-error..full-script.py)
 - [Selenium](selenium)
