@@ -1,5 +1,5 @@
 # https://www.py4e.com/html3/07-files
-# Exercise 1
+# Exercise 2
 
 import sys
 
@@ -20,13 +20,20 @@ def get_file_handle(filename):
 
     return fh
 
-def print_lines(file_handle):
+def find_numbers(file_handle):
+    found_numbers = []
+
     for line in fh:
-        print(line.rstrip().upper())
+        if line.startswith('X-DSPAM-Confidence'):
+            num_string = line.rstrip().split(':')[1]
+            found_numbers.append(float(num_string))
+
+    return found_numbers        
 
 ############
 ### MAIN ###
 ############
 filename = get_args()
 fh = get_file_handle(filename)
-print_lines(fh)
+numbers = find_numbers(fh)
+print(numbers)
