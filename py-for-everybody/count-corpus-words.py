@@ -1,6 +1,5 @@
-# https://www.py4e.com/html3/09-dictionaries
-# Exercise 3
-
+# Count the number of times a word appears in a file
+import string
 import sys
 
 def get_args():
@@ -12,7 +11,7 @@ def get_args():
 
 def get_file_handle(filename):
     try:
-        fh = open(filename)
+        fh = open(filename, encoding="utf8")
     except Exception as e:
         print(f"Can't open file: {filename}")
         print(e)
@@ -20,17 +19,19 @@ def get_file_handle(filename):
 
     return fh
 
-def get_addresses(file_handle):
-    addresses = dict()
+def get_words(file_handle):
+    words = dict()
     this_line = []
 
-    for line in fh:
-        if line.startswith("From "):
-            this_line = line.split()
-            address = this_line[1].lower()
-            addresses[address] = addresses.get(address, 0) + 1
 
-    return addresses
+    for line in fh:
+        line = line.lower()
+        line = line.translate(line.maketrans('', '', string.punctuation))
+        this_line = line.split()
+        for word in this_line:
+            words[word] = words.get(word, 0) + 1
+
+    return words
 
 def sort_by_count(count_dict):
     # Doesn't work with python pre-3.6
@@ -60,14 +61,10 @@ DISPLAY_COUNT = 3
 
 filename = get_args()
 fh = get_file_handle(filename)
-addresses = get_addresses(fh)
+words = get_words(fh)
 
-# # Uncomment to check list
-# print(f"First 3: {list(addresses.keys())[:3]} of {len(addresses)}")
-
-# Uncomment to print first sorted values
-sorted_addresses = sort_by_count(addresses) 
-print(f"First {DISPLAY_COUNT} of {len(sorted_addresses)}")
+sorted_words = sort_by_count(words) 
+print(f"First {DISPLAY_COUNT} of {len(words)}")
 for dc in range(DISPLAY_COUNT):
-    print(f"{list(sorted_addresses.items())[dc]}")
+    print(f"{list(sorted_words.items())[dc]}")
 

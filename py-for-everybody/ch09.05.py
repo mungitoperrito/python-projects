@@ -57,16 +57,14 @@ def sort_by_count(count_dict):
 ############
 ### MAIN ###
 ############
+DISPLAY_COUNT = 3
+
 filename = get_args()
 fh = get_file_handle(filename)
 domains = get_domains(fh)
 
-# # Uncomment to check list
-# print(f"First 3: {list(domains.keys())[:3]} of {len(domains)}")
-
 # Uncomment to print first sorted values
 sorted_domains = sort_by_count(domains) 
-DISPLAY_COUNT = 3
 print(f"First {DISPLAY_COUNT} of {len(sorted_domains)}")
 for dc in range(DISPLAY_COUNT):
     print(f"{list(sorted_domains.items())[dc]}")
