@@ -9,4 +9,9 @@ for k,v in d.items():
     print(f"k: {k} v: {v} types: {type(k), type(v)} ")
 
 for di in d:
+    # NOTE: di is a string
+    print(f"di: {di} type: {type(di)} ")
+
+for di in d.items():
+    # NOTE: di is a tuple
     print(f"di: {di} type: {type(di)} ")
