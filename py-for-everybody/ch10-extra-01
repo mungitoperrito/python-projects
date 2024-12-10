@@ -1,0 +1,12 @@
+# tuples
+
+
+d = {'a': 1, 'b': 2, 'g': 7}
+print(type(d))
+
+for k,v in d.items():
+    # NOTE: k,v aren't a tuple 
+    print(f"k: {k} v: {v} types: {type(k), type(v)} ")
+
+for di in d:
+    print(f"di: {di} type: {type(di)} ")
