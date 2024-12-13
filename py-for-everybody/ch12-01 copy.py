@@ -9,44 +9,59 @@ about the headers for this exercise, simply show the first 3000
 characters of the document contents.
 '''
 
-import socket
+import urllib.request as urequest
+import urllib.parse as uparse
+import urllib.error as uerror
 
-needs_url = True
-while needs_url:
-     full_url = input('Enter a URL: ')
-     if len(full_url) == 0:
-         continue
-     if full_url.startswith('http') != True:
-         continue
-     
-     needs_url = False
 
-url = full_url.split('/')[2]
+def get_url():
+    while True:
+        url = input('Enter a URL: ')
+        if len(url) == 0:
+            continue
+        if url.startswith('http') != True:
+            continue
+        
+        return url
 
-mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-try:
-    mysock.connect((url, 80))
-except Exception as e:
-    print(f'ERROR: URL not found: {url}')
-    print(e)
-    exit()
+def get_site(url):
+    try:
+        site = urequest.urlopen(url)
+    except Exception as e:
+        print(f'ERROR: Site not found: {url}')
+        print(e)
+        exit()
 
-try:
-    # cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
-    cmd = 'GET' + full_url + 'HTTP/1.0\r\n\r\n'
-    cmd = cmd.encode()
-    mysock.send(cmd)
-except Exception as e:
-    print(f'ERROR: Full URL not found: {full_url}')
-    print(e)
-    exit()
+    return site
 
-while True:
-    data = mysock.recv(512)
-    if len(data) < 1:
-        break
-    print(data.decode(),end='')
+def get_content(site):
+    lines = list()
+    size = 0
 
-mysock.close()
+    try:
+        for line in site:
+            l = line.decode()
+            lines.append(l)
+            size += len(l)
+    except Exception as e:
+        print(f'ERROR: Content missing: {line}')
+        print(e)
+        exit()
 
-# Code: https://www.py4e.com/code3/socket1.py
+    return lines, size    
+
+
+############
+### MAIN ###
+############
+url = get_url()
+site = get_site(url)
+site_content, site_size = get_content(site)
+
+print(site_content)
+print(site_size)
+
+# TEST SITES
+# http://data.pr4e.org/romeo.txt
+# https://docs.python.org
+#
