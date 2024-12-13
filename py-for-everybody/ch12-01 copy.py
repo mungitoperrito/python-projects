@@ -8,11 +8,7 @@ counting the overall number of characters in the document. Don’t worry
 about the headers for this exercise, simply show the first 3000
 characters of the document contents.
 '''
-
 import urllib.request as urequest
-import urllib.parse as uparse
-import urllib.error as uerror
-
 
 def get_url():
     while True:
@@ -24,6 +20,7 @@ def get_url():
         
         return url
 
+
 def get_site(url):
     try:
         site = urequest.urlopen(url)
@@ -34,6 +31,7 @@ def get_site(url):
 
     return site
 
+
 def get_content(site):
     lines = list()
     size = 0
@@ -41,7 +39,7 @@ def get_content(site):
     try:
         for line in site:
             l = line.decode()
-            lines.append(l)
+            lines.append(l.rstrip())
             size += len(l)
     except Exception as e:
         print(f'ERROR: Content missing: {line}')
@@ -51,14 +49,32 @@ def get_content(site):
     return lines, size    
 
 
+def print_to_count(input_list, count):
+    # Assumes the input is a list of strings
+    count_so_far = 0
+
+    for line in input_list:
+        if count_so_far < count:
+            if len(line) + count_so_far <= count:
+                print(line)
+                count_so_far += len(line)
+            else:
+                up_to = count - count_so_far + 1
+                print(line[:up_to])
+                return
+    
+
+
 ############
 ### MAIN ###
 ############
 url = get_url()
 site = get_site(url)
 site_content, site_size = get_content(site)
+characters_to_print = 3000
 
-print(site_content)
+# print(site_content)
+print_to_count(site_content, characters_to_print)
 print(site_size)
 
 # TEST SITES
