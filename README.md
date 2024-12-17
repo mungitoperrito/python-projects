@@ -1,6 +1,8 @@
 # python-projects
 
-This repo contains utitity scripts. It also has code from learning sites. Some of this code is older and use Python v2. New code uses Python v3.    
+This repo contains utitity scripts. It also has exercise code from learning sites.
+
+Most of this code use Python v3. Some of this code is older and uses Python v2.    
 
 - [Python for Everybody](py-for-everybody) - [Book site](https://www.py4e.com/html3/)
 - [TAU Test automation](test-automation-tau) - [Company site](https://testautomationu.applitools.com/)
