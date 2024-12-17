@@ -3,8 +3,8 @@
 class Sample:
 
     def __init__(self):
-        self.x = 0      # Publie
-        self.__y__ = 0  # Private
+        self.x = 0    # Publie
+        self.__y = 0  # Private
 
     def inc_x(self):
         self.x += 1
@@ -13,34 +13,39 @@ class Sample:
         print(f"x: {self.x}")
 
     def inc_y(self):
-        self.__y__ += 1
+        self.__y += 1
 
     def print_y(self):
-        print(f"y: {self.__y__}")
+        print(f"y: {self.__y}")
 
 test = Sample()
 
 test.print_x()
 test.inc_x()
 test.print_x()
-
-test.print_y()
-test.inc_y()
-test.print_y()
+test.x += 1
+test.print_x()
 
 # print(f"dir: {dir(test)}")
 print(f"type: {type(test)}")
 print(f"type: {type(test.x)}")
 print(f"type: {type(test.inc_x)}")
-print(f"type: {type(test.y)}")
-print(f"type: {type(test.inc_y)}")
 
-test.x += 1
-test.print_x()
+print()
+
+test.print_y()
+test.inc_y()
+test.print_y()
 
 try:
-    test.x += 1
-    test.print_x()
+    test.__y += 1
+    test.print_y()
+except Exception as e:
+    print(f"ERROR: {e}")
+
+try:
+    print(f"type: {type(test.__y)}")
+    print(f"type: {type(test.inc_y)}")
 except Exception as e:
     print(f"ERROR: {e}")
 
