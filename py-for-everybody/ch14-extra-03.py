@@ -1,4 +1,4 @@
-# objects - constructors
+# objects - class variables
 
 class Sample:
 
