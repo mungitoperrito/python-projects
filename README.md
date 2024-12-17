@@ -1,6 +1,6 @@
 # python-projects
 
-This repo contains scraps and artifacts of Python code.  
+This repo contains utitity scripts. It also has code from learning sites. Some of this code is older and use Python v2. New code uses Python v3.    
 
 - [Python for Everybody](py-for-everybody) - [Book site](https://www.py4e.com/html3/)
 - [TAU Test automation](test-automation-tau) - [Company site](https://testautomationu.applitools.com/)
