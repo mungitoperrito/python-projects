@@ -1,15 +1,9 @@
-''' 
-Gather data on sizes of svn repos
-
-Author: Dave Cuthbert
-Copyright: GrammaTech 2017
-'''
+# Gather data on sizes of svn repos
 
 import os
 import shutil
 import subprocess
 from datetime import datetime
-
 
 
 def setup_dir(test_dir_name):
