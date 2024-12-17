@@ -11,5 +11,9 @@ This repo contains scraps and artifacts of Python code.
   - [API driven crossword puzzle generator](https://github.com/mungitoperrito/wrk-crossword-api/tree/main)
   - [Tutorial walkthrough](/weaviate/multi-tenant-walkthrough.ipynb)
 - Utilty scripts
-  - [Scrape Gitlab snippets](utility-scripts/collect-and-move-snippets.py)
-- [Selenium](selenium)
+  - GitLab
+    - [Scrape snippets](utility-scripts/gitlab-collect-and-move-snippets.py)
+    - [Scrape usernames](/utility-scripts/gitlab-get-usernames.py)
+    - [Collect runner diagnostics](/utility-scripts/gitlab-runner-diagnostic.py)
+  - [Gather svn usage statistics](/utility-scripts/gather-svn-stats.py)
+- [Selenium](selenium)  
