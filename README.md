@@ -14,8 +14,9 @@ Most of this code use Python v3. Some of this code is older and uses Python v2.
   - [Tutorial walkthrough](/weaviate/multi-tenant-walkthrough.ipynb)
 - Utilty scripts
   - GitLab
-    - [Scrape snippets](utility-scripts/gitlab-collect-and-move-snippets.py)
+    - [Scrape snippets](/utility-scripts/gitlab-collect-and-move-snippets.py)
     - [Scrape usernames](/utility-scripts/gitlab-get-usernames.py)
     - [Collect runner diagnostics](/utility-scripts/gitlab-runner-diagnostic.py)
   - [Gather svn usage statistics](/utility-scripts/gather-svn-stats.py)
+- [Interview question](/utility-scripts/interview-problem-karat.py)
 - [Selenium](selenium)  
