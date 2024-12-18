@@ -1,6 +1,6 @@
-# python-projects
+# Python projects, scripts, utilities
 
-This repo contains utitity scripts. It also has exercise code from learning sites.
+This repo contains various utility scripts. It also has some small projects, and exercise code from learning sites.
 
 Most of this code uses Python v3. Some of this code is older and uses Python v2.    
 
@@ -20,4 +20,5 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
     - [Collect runner diagnostics](/utility-scripts/gitlab-runner-diagnostic.py)
   - [Gather svn usage statistics](/utility-scripts/gather-svn-stats.py)
 - [Interview question](/utility-scripts/interview-problem-karat.py)
+- [Birthday paradox stats generator](/utility-scripts/paradox.py)
 - [Selenium](selenium)  
