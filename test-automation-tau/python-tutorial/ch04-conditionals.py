@@ -32,16 +32,16 @@ def divide(num01, num02):
 def run_operation(operation, numbers):
     if operation == '+':
         add(numbers[0], numbers[1])
-    
+
     elif operation == '-':
         subtract(numbers[0], numbers[1])
-  
+
     elif operation == '*':
         multiply(numbers[0], numbers[1])
-  
+
     elif operation == '/':
         divide(numbers[0], numbers[1])
-  
+
     else:
         print(f"Error: {operation} not found.")
 

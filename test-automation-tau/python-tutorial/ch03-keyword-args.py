@@ -48,7 +48,7 @@ def user_info(fname, lname, *args, **kwargs):
 user_info(lname="LN02", fname="FN02")  # Arg order changes
 user_info("LN03", "FN03", 2, 4, 6)       # Postional args before keyword
 user_info("LN04", "FN04", 2, 4, 6, "AA", "BB", "CC") # args eats all, no kword
-user_info("LN04", "FN04", 2, 4, 6, "AA", b="BB", c="CC") 
+user_info("LN04", "FN04", 2, 4, 6, "AA", b="BB", c="CC")
 
 # # Example 06 (based on site ex)
 # def application(fname, lname, email, company, *args, **kwargs):
