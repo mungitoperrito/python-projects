@@ -21,7 +21,7 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
   - [Gather svn usage statistics](/various-scripts/gather-svn-stats.py)
 - [Interview question](/various-scripts/interview-problem-karat.py)
 - [Birthday paradox stats generator](/various-scripts/paradox.py)
-- [Arthimetic worksheet generator](/various-scripts/simple-arithmetic.py)\
+- [Arthimetic worksheet generator](/various-scripts/simple-arithmetic.py)
   [Tests](/various-scripts/test-simple-arithmetic.py)
 - [Project Euler](project-euler)
 - [Selenium](selenium)
