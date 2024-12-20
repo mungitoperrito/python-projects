@@ -15,11 +15,13 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
   - [Tutorial walkthrough](/weaviate/multi-tenant-walkthrough.ipynb)
 - Utilty scripts
   - GitLab
-    - [Scrape snippets](/utility-scripts/gitlab-collect-and-move-snippets.py)
-    - [Scrape usernames](/utility-scripts/gitlab-get-usernames.py)
-    - [Collect runner diagnostics](/utility-scripts/gitlab-runner-diagnostic.py)
-  - [Gather svn usage statistics](/utility-scripts/gather-svn-stats.py)
-- [Interview question](/utility-scripts/interview-problem-karat.py)
-- [Birthday paradox stats generator](/utility-scripts/paradox.py)
+    - [Scrape snippets](/various-scripts/gitlab-collect-and-move-snippets.py)
+    - [Scrape usernames](/various-scripts/gitlab-get-usernames.py)
+    - [Collect runner diagnostics](/various-scripts/gitlab-runner-diagnostic.py)
+  - [Gather svn usage statistics](/various-scripts/gather-svn-stats.py)
+- [Interview question](/various-scripts/interview-problem-karat.py)
+- [Birthday paradox stats generator](/various-scripts/paradox.py)
+- [Arthimetic worksheet generator](/various-scripts/simple-arithmetic.py)\
+  [Tests](/various-scripts/test-simple-arithmetic.py)
 - [Project Euler](project-euler)
 - [Selenium](selenium)
