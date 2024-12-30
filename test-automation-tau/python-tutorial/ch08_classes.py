@@ -1,4 +1,4 @@
-# https://testautomationu.applitools.com/python-tutorial/chapter87.html
+# https://testautomationu.applitools.com/python-tutorial/chapter8.html
 # Classes - scratch
 
 
