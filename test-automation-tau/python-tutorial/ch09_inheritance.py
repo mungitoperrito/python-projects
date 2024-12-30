@@ -6,9 +6,27 @@ class Person:
     def __init__(self, fname, lname):
         self.fname = fname
         self.lname = lname
+        self.annoyed = False
+
 
     def print_src(self):
-        print("Base class")
+        print("Base")
+
+    def print_annoyance(self):
+        print(f"Annoyed: {self.annoyed}")
+
+
+class Enemy(Person):
+    def __init__(self, fname, lname, enemies):
+        super().__init__(fname, lname)
+        self.enemies = enemies
+
+    def insult(self, other):
+        if other in self.enemies:
+            print(f"{self.fname} says, 'You suck {other}'")
+
+            # Can't use string to call class. Use globals dict instead
+            globals()[other].annoyed = True
 
 
 ############
@@ -16,5 +34,16 @@ class Person:
 ############
 
 if __name__ == "__main__":
+    # Test base class
+    # steve = Person("steve", "mitsis")
+    # steve.print_src()
+
+    # Simple inheritance
     steve = Person("steve", "mitsis")
-    steve.print_src()
+    frank = Enemy("frank", "jones", ["bob", "ted"])
+    paul = Enemy("paul", "smith", ["bob", "ted", "steve"])
+
+    frank.insult("steve")
+    steve.print_annoyance()
+    paul.insult("steve")
+    steve.print_annoyance()
