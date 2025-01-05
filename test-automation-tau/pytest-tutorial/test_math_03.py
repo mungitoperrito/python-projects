@@ -23,4 +23,4 @@ def test_divide_by_zero():
     with pytest.raises(ZeroDivisionError) as e:
         num = good_int / zero
 
-    assert 'division by zero'in str(e)
+    assert 'division by zero'in str(e.value)
