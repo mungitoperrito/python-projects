@@ -1,6 +1,3 @@
-# ch01
-# https://testautomationu.applitools.com/pytest-tutorial/chapter1.html
-
 # ch02
 # https://testautomationu.applitools.com/pytest-tutorial/chapter2.html
 
