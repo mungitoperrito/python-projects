@@ -8,8 +8,8 @@ products = [
     (2, 3, 6),       # positive integers
     (1, 99, 99),     # identity
     (0, 99, 0),      # zero
-    (3, -4, -12)     # positive by negative
-    (-5, -5, -25),   # negativ by negative
+    (3, -4, -12),    # positive by negative
+    (-5, -5, 25),    # negativ by negative
     (2.5, 3.0, 7.5)  # floats
 ]
 
