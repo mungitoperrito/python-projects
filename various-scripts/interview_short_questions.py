@@ -52,8 +52,7 @@ for v in ['a', 'b', 'c']:
     print(returns)
 
 # Output:
-'''
-Option one
-Option four
-a
-'''
+# Option one
+# Option four
+# a
+
