@@ -1,31 +1,30 @@
 '''
-Some print statements to show order of execution 
-
+Some print statements to show order of statement execution
 '''
 
 
-class sample():
+class Sample():
     print("CLASS DEF LINE 1")
 
     var1 = ''
 
     def __init__(self):
-        print("CLASS INIT 1")
+        print("\tCLASS INIT 1")
         self.var1 = 10
 
     def get_val(self):
-        print("CLASS FUNC DEF LINE 1")
+        print("\tCLASS FUNC DEF LINE 1")
         return self.var1
 
-    print("CLASS DEF END")
+    print("CLASS DEF END\n\n")
 
 
 def main():
     print("IN FUNC LINE 1")
-    s = sample()
-    print("IN FUNC AFTER CLASS INIT")
-    print(s.get_val())
-    print("IN FUNC END")
+    s = Sample()
+    print("\tIN FUNC AFTER CLASS INIT")
+    print(f"\tRUN FUNCTION: {s.get_val()}")
+    print("IN FUNC END\n\n")
 
 
 if __name__ == "__main__":
