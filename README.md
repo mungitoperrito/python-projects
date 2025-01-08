@@ -13,15 +13,18 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
   - [Ollama driven crossword puzzle genertor](https://github.com/mungitoperrito/wrk_weaviate_ollama/tree/main)
   - [API driven crossword puzzle generator](https://github.com/mungitoperrito/wrk_crossword_api/tree/main)
   - [Tutorial walkthrough](/weaviate/multi_tenant_walkthrough.ipynb)
-- Utilty scripts
+- Various scripts
   - GitLab
     - [Scrape snippets](/various_scripts/gitlab_collect_and_move_snippets.py)
     - [Scrape usernames](/various_scripts/gitlab_get_usernames.py)
     - [Collect runner diagnostics](/various_scripts/gitlab_runner_diagnostic.py)
   - [Gather svn usage statistics](/various_scripts/gather_svn_stats.py)
-- [Interview question](/various_scripts/interview_problem_karat.py)
-- [Birthday paradox stats generator](/various_scripts/paradox.py)
-- [Arthimetic worksheet generator](/various_scripts/simple_arithmetic.py)
-  [Tests](/various_scripts/test_simple_arithmetic.py)
+  - Interview questions
+    -[Short questions](/various_scripts/interview_short_questions.py)
+    -[karat](/various_scripts/interview_problem_karat.py)
+  - [Birthday paradox stats generator](/various_scripts/paradox.py)
+  - [Arthimetic worksheet generator](/various_scripts/simple_arithmetic.py)
+    [Tests](/various_scripts/test_simple_arithmetic.py)
+  - [Statement execution order](/various-scripts/order_of_execution.py)
 - [Project Euler](project_euler)
 - [Selenium](selenium)
