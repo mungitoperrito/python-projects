@@ -1,5 +1,5 @@
-# ch05
-# https://testautomationu.applitools.com/pytest-tutorial/chapter5.html
+# ch06
+# https://testautomationu.applitools.com/pytest-tutorial/chapter6.html
 
 # # DEBUG
 # import sys
@@ -12,29 +12,29 @@ from stuff.accum import Accumulator  # Fails with c> pytest
                                      # Works with c> python -m pytest
 
 
-def test_accumulator_init():
-  a = Accumulator()
-  assert a.count == 0
+@pytest.fixture
+def accum():
+  return Accumulator()
 
-def test_accumulator_add_one():
-  a = Accumulator()
-  a.add()
-  assert a.count == 1
 
-def test_accumulator_add_three():
-  a = Accumulator()
-  a.add(3)
-  assert a.count == 3
+def test_accumulator_init(accum):
+  assert accum.count == 0
 
-def test_accumulator_add_twice():
-  a = Accumulator()
-  a.add()
-  a.add()
-  assert a.count == 2
+def test_accumulator_add_one(accum):
+  accum.add()
+  assert accum.count == 1
 
-def test_accumulator_cannot_set_count_directly():
-  a = Accumulator()
+def test_accumulator_add_three(accum):
+  accum.add(3)
+  assert accum.count == 3
+
+def test_accumulator_add_twice(accum):
+  accum.add()
+  accum.add()
+  assert accum.count == 2
+
+def test_accumulator_cannot_set_count_directly(accum):
   with pytest.raises(AttributeError,
     match=r"property 'count' of 'Accumulator' object has no setter") as e:
 
-    a.count = 10
+    accum.count = 10
