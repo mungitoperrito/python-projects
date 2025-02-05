@@ -1,7 +1,8 @@
 # ch11
 # https://testautomationu.applitools.com/pytest-tutorial/chapter11.html
 
-# For path inclusion, use: c> python -m pytest
+# For path inclusion: python -m pytest
+# To run headed, with delays: python -m pytest --headed --slowmo 2000
 
 import pytest
 import re
