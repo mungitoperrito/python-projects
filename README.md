@@ -4,13 +4,13 @@ This repo contains various utility scripts. It also has some small projects, and
 
 Most of this code uses Python v3. Some of this code is older and uses Python v2.
 
-- [Python for Everybody](py_for_everybody) - [Book site](https://www.py4e.com/html3/)
-- [TAU Test automation](test-automatio-tau) - [Course site](https://testautomationu.applitools.com)
-  - [Python course](test-automatio-taupython_tutorial) -
+- [Python for Everybody](#py_for_everybody/) - [Book site](https://www.py4e.com/html3/)
+- [TAU Test automation](test-automatio-tau/) - [Course site](https://testautomationu.applitools.com)
+  - [Python course](test-automatio-tau/python_tutorial/)
     [Course site](https://testautomationu.applitools.com/python-tutorial/)
-  - [Pytest course](test-automatio-tau/pytest_tutorial) -
+  - [Pytest course](test-automatio-tau/pytest_tutorial/)
     [Course site](https://testautomationu.applitools.com/pytest-tutorial)
-- [European python class](euro_python) - [Course site](https://python_course.eu/)
+- [European python class](euro_python/) - [Course site](https://python_course.eu/)
 - Weaviate
   - [Exploration and debugging code](/weaviate/recreate_tenant_removal_error_full_script.py)
   - [Reproducer code](/weaviate/recreate_tenant_removal_error.py)
