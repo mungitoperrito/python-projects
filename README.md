@@ -13,13 +13,12 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
 - [European python class](euro_python/) - [Course site](https://python_course.eu/)
 - Weaviate
   - [Exploration and debugging code](/weaviate/recreate_tenant_removal_error_full_script.py)
-  - [Reproducer code](/weaviate/recreate_tenant_removal_error.py)
+  - [Bug reproducer test code](/weaviate/recreate_tenant_removal_error.py)
   - [Ollama driven crossword puzzle genertor](https://github.com/mungitoperrito/wrk_weaviate_ollama/tree/main)
   - [API driven crossword puzzle generator](https://github.com/mungitoperrito/wrk_crossword_api/tree/main)
   - [Tutorial walkthrough](/weaviate/multi_tenant_walkthrough.ipynb)
 - Various scripts
   - [Arthimetic worksheet generator](/various_scripts/simple_arithmetic.py)
-    and some [tests](/various_scripts/test_simple_arithmetic.py)
   - [Birthday paradox stats generator](/various_scripts/paradox.py)
   - GitLab
     - [Scrape snippets](/various_scripts/gitlab_collect_and_move_snippets.py)
