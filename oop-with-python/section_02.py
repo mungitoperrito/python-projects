@@ -22,7 +22,13 @@ item_02 = Item("Compu", 1000, 3 )
 # item_03 = Item("FailPrice", -50, 3 )      # Uncomment to test assert
 # item_04 = Item("FailQuantity", 50, -3 )   # Uncomment to test assert
 
+# Show class variable
 print(Item.discount)
 
 print(item_01.calculate_total_price())
 print(item_02.calculate_total_price())
+
+# Show all variables
+print(Item.__dict__)
+print(item_01.__dict__)
+
