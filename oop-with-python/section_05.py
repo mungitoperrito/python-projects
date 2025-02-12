@@ -58,7 +58,13 @@ class Item:
 
     # Improve raw output when Item instances are printed
     def __repr__(self):
-        return f"Item('{self.name}', {self.price}, {self.quantity})"
+        # Use generic class name
+        return f"{self.__class__.__name__}" + \
+               f"(" + \
+               f"'{self.name}'," + \
+               f"{self.price}," + \
+               f"{self.quantity}" + \
+               f")"
 
 
 class Phone(Item):
@@ -96,8 +102,8 @@ if __name__ == "__main__":
     phone_02.broken = 2
 
     # # Uncomment to debug
-    # print(f"Item: \n{Item.all}")
+    print(f"Item: \n{Item.all}")
     # print("\n")
-    # print(f"Phone: \n{Phone.all}")
+    print(f"Phone: \n{Phone.all}")
 
     print(phone_02.calculate_total_price())
