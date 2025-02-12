@@ -68,8 +68,6 @@ class Item:
 
 
 class Phone(Item):
-    all = []
-
     def __init__(self, name, price, quantity=0, broken=0):
         super().__init__(name, price, quantity)
 
@@ -80,21 +78,16 @@ class Phone(Item):
         self.broken = broken
 
         # Actions on init
-        Phone.all.append(self)
 
 
 ############
 ### MAIN ###
 ############
 
-# # Uncomment to initialize items
-# Item.import_from_csv('items.csv')
-
 if __name__ == "__main__":
 
-    # # Uncomment to test is_integer static method
-    # for value in [5, 5.0, 5.1]:
-    #     print(f"{value}: {Item.is_integer(value)}")
+    # # Uncomment to initialize items
+    # Item.import_from_csv('items.csv')
 
     phone_01 = Phone("ABC Phone v10", 500, 4)
     phone_02 = Phone("ABC Phone v20", 750, 3)
@@ -105,5 +98,3 @@ if __name__ == "__main__":
     print(f"Item: \n{Item.all}")
     # print("\n")
     print(f"Phone: \n{Phone.all}")
-
-    print(phone_02.calculate_total_price())
