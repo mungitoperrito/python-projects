@@ -12,12 +12,23 @@ class Item:
         assert quantity >= 0, f"Quantity {quantity} is not valid"
 
         # Instance attributes
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
 
         # Actions on init
         Item.all.append(self)
+
+    # Define a property rather than an attribute
+    @property
+    def name(self):
+        # Double underscore makes the variable private
+        return self.__name
+
+    # This has to follow @property definition
+    @name.setter
+    def name(self, value):
+        self.__name = value
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -59,7 +70,7 @@ class Item:
         # Use generic class name
         return f"{self.__class__.__name__}" + \
                f"(" + \
-               f"'{self.name}'," + \
+               f"'{self.__name}'," + \
                f"{self.price}," + \
                f"{self.quantity}" + \
                f")"
