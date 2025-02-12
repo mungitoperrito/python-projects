@@ -13,7 +13,7 @@ class Item:
 
         # Instance attributes
         self.__name = name
-        self.__price = price
+        self.price = price
         self.quantity = quantity
 
         # Actions on init
@@ -25,21 +25,19 @@ class Item:
         # Double underscore makes the variable private
         return self.__name
 
-    @property
-    def price(self):
-        # Double underscore makes the variable private
-        return self.__price
-
     # This has to follow @ property definition
     @name.setter
     def name(self, value):
         self.__name = value
 
     def calculate_total_price(self):
-        return self.__price * self.quantity
+        return self.price * self.quantity
 
     def calculate_discounted_price(self):
-        return self.__price * (1 - self.discount)
+        # Old method changed stored price
+        # self.price = self.price * (1 - self.discount)
+
+        return self.price * (1 - self.discount)
 
     # First paramter is class(cls)
     @classmethod
@@ -73,6 +71,6 @@ class Item:
         return f"{self.__class__.__name__}" + \
                f"(" + \
                f"'{self.__name}'," + \
-               f"{self.__price}," + \
+               f"{self.price}," + \
                f"{self.quantity}" + \
                f")"
