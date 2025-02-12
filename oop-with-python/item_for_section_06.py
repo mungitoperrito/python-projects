@@ -25,8 +25,7 @@ class Item:
         # Double underscore makes the variable private
         return self.__name
 
-    # This has to follow @
-    # property definition
+    # This has to follow @ property definition
     @name.setter
     def name(self, value):
         self.__name = value
