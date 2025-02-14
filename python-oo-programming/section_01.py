@@ -11,3 +11,11 @@
 # print(name.upper())
 
 ##############
+# Simple classes
+
+class Dog:
+    def bark(self):
+        print("Woof woof")
+
+dog_01 = Dog()
+dog_01.bark()
