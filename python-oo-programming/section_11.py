@@ -50,7 +50,8 @@ if __name__ == '__main__':
     # bike_01.start()
 
     # Uncomment to test
-    vehicles = [
+    # Type hinting resticts elements of the list to Vehicle types
+    vehicles: list[Vehicle] = [
         Car('BrandCC', 'ModelCC', 2018, 4, 4),
         Motorcycle('BrandMM', 'ModelMM', 2021, 2)
     ]
