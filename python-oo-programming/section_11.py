@@ -1,34 +1,36 @@
 # Polymorphism
 
-class Car:
-    def __init__(self, brand, model, year, doors, wheels):
+class Vehicle:
+    def __init__(self, brand, model, year):
         self.brand = brand
         self.model = model
         self.year = year
+
+
+    def start(self):
+        print(f'{self.__class__.__name__}: is starting' )
+
+
+    def stop(self):
+        print(f'{self.__class__.__name__}: is stopping' )
+
+class Car(Vehicle):
+    def __init__(self, brand, model, year, wheels, doors):
+        super().__init__(brand, model, year)
+        self.wheels = wheels
         self.doors = doors
+
+    def stop(self):
+        print(f'{self.__class__.__name__}: Method overide' )
+
+
+class Motorcycle(Vehicle):
+    def __init__(self, brand, model, year, wheels):
+        super().__init__(brand, model, year)
         self.wheels = wheels
 
-
     def start(self):
-        print(f'{self.__class__.__name__}: is starting' )
-
-
-    def stop(self):
-        print(f'{self.__class__.__name__}: is stopping' )
-
-
-class Motorcycle:
-    def __init__(self, brand, model, year, wheels):
-        self.brand = brand
-        self.model = model
-        self.year = year
-
-    def start(self):
-        print(f'{self.__class__.__name__}: is starting' )
-
-
-    def stop(self):
-        print(f'{self.__class__.__name__}: is stopping' )
+        print(f'{self.__class__.__name__}: Method overide' )
 
 
 ############
