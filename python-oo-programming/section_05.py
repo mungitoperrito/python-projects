@@ -1,4 +1,4 @@
-# Getters and setters
+# Getters and setter from properties rather than methods
 
 # Protected by convention, single underscore
 class User:
@@ -8,18 +8,28 @@ class User:
         self._password = password
 
     @property
+    def username(self):
+        return self._username
+
+    @property
     def email(self):
         print("In property setup")
         return self._email
 
-    def get_email(self):
-        return self._email
+    @email.setter
+    def email(self, value):
+        # Sample of validation in setter
+        if '@' in value:
+            self._email = value
 
-    def set_email(self, value):
-        self._email = value
+    @property
+    def password(self):
+        return self._password
 
 user_01 = User("Dave", "aaa@corp.com", "abc")
-user_02 = User("Bob", "bbb@corp.com", "abc")
 
-for u in [user_01, user_02]:
-    print(u.email)
+print(user_01.email)
+user_01.email = "Wont work"
+print(user_01.email)
+user_01.email = "bbb@firm.net"    # Works, meets validation
+print(user_01.email)
