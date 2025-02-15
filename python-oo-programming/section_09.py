@@ -11,7 +11,7 @@ class EmailServer:
 
 
     def _disconnect(self):
-        print('Disconnecting')
+        print('Disconnecting ...')
 
 
     def send_email(self):
