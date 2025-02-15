@@ -24,6 +24,29 @@ class Account:
         print(f"Deposited ${str(amount)}.", end='')
         print(f" Balance for {self.owner} is: {str(self.__balance)}")
 
-# Uncomment to test
-account_01 = Account("Dave", 50.00)
-account_01.deposit(5.0)
+# # Uncomment to test
+# account_01 = Account("Dave", 50.00)
+# account_01.deposit(5.0)
+
+
+class NotSoSecret:
+    def __init__(self):
+        self.aaa = 'A'
+        self._bbb = 'B'
+        self.__ccc = 'C'
+
+thing_01 = NotSoSecret()
+
+print(thing_01.aaa)
+
+print(thing_01._bbb)    # Works, poor practice
+
+try:
+    print(thing_01.__ccc)   # Fails, private
+except:
+    print("__ccc fails as expected")
+
+try:
+        print(thing_01._NotSoSecret__ccc)   # Should unmangle name
+except:
+    print("__ccc didn't unmangle")
