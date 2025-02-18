@@ -56,6 +56,7 @@ def adivina_el_numero(numero, valor_mayor):
         if adivina > numero:
             alto = adivina
 
+        print(f'Numero: {numero}   la compu adivina: {adivina}')
 
     print(f'Número de intentos: {cuenta}')
 
