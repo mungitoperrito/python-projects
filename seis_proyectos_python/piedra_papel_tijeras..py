@@ -2,17 +2,7 @@ import random
 import sys
 
 def escoger():
-    eleccion = ''
-
-    r = random.randint(0,2)
-    if r == 0:
-        eleccion = 'piedra'
-    elif r == 1:
-        eleccion = 'papel'
-    else:
-        eleccion = 'tijeras'
-
-    return eleccion
+    return random.choice(['piedra', 'papel', 'tijeras'])
 
 def jugar():
     rondas = 0
