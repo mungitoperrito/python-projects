@@ -6,13 +6,14 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
 
 - Courses
   - [Python for Everybody](py_for_everybody/) - [Book site](https://www.py4e.com/html3/)
-  - [Object Orient Programing with Python](oop-with-python/) - [Course site](https://www.youtube.com/watch?v=Ej_02ICOIgs)
-  - [Python OO Programing](python-oo-programming/) - [Course site](https://www.youtube.com/watch?v=iLRZi0Gu8Go)
+  - [Object Orient Programing with Python](oop_with_python/) - [Course site](https://www.youtube.com/watch?v=Ej_02ICOIgs)
+  - [Python OO Programing](python_oo_programming/) - [Course site](https://www.youtube.com/watch?v=iLRZi0Gu8Go)
   - [TAU Test automation](test_automation_tau/) - [Course site](https://testautomationu.applitools.com)
     - [Python course](test_automation_tau/python_tutorial/)
       [Course site](https://testautomationu.applitools.com/python-tutorial/)
     - [Pytest course](test_automation_tau/pytest_tutorial/)
       [Course site](https://testautomationu.applitools.com/pytest-tutorial)
+  - [Seis proyectos de python](seis_proyectos_python) - [Course site](https://www.youtube.com/watch?v=tWnyBD2src0)
   - [European python class](euro_python/) - [Course site](https://python_course.eu/)
 - Weaviate
   - [Exploration and debugging code](/weaviate/recreate_tenant_removal_error_full_script.py)
