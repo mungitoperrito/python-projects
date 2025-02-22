@@ -6,8 +6,8 @@ from dibujos import dibujos
 
 
 # Uncomment as needed to test or run
-# LISTA_DE_PALABRAS = "lista_de_palabras.txt"
-LISTA_DE_PALABRAS = "lista_de_palabras_test.txt"
+LISTA_DE_PALABRAS = "lista_de_palabras.txt"
+# LISTA_DE_PALABRAS = "lista_de_palabras_test.txt"
 
 
 def imprimir_saludo():
