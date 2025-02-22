@@ -1,9 +1,15 @@
 import random
-import time
+import timeit
 
-MIN = 0
-MAX = 500
-NUMERO = 2000
+NUMERO = 100000
+
+# Comment to test
+MIN = -1 * NUMERO
+MAX = NUMERO
+
+# # Uncomment to test
+# MIN = -10
+# MAX = 10
 
 def generar_lista(rango, minimo, maximo):
     lista = [random.randint(minimo, maximo) for x in range(rango)]
@@ -18,11 +24,10 @@ def busqueda_ingenua(lista, objetivo):
     return -1
 
 
-def busqueda_binaria(lista, objetivo, min=0, max=None):
+def busqueda_binaria(lista, objetivo):
     # lista tiene que estar en orden
-    if max is None:
-        max = len(lista)
-
+    min = 0
+    max = len(lista)
 
     while True:
         punto_medio = (min + max ) // 2
@@ -37,7 +42,7 @@ def busqueda_binaria(lista, objetivo, min=0, max=None):
         else:
             min = punto_medio
 
-        if (max - min <= 0):
+        if (max - min <= 1):
             return -1
 
 
@@ -45,18 +50,42 @@ def busqueda_binaria(lista, objetivo, min=0, max=None):
 ### MAIN ###
 ############
 
-lista_de_valores = generar_lista(NUMERO, MIN, MAX)
-lista_de_valores.sort()
-objetivo = random.randint(MIN, MAX)
+if __name__ == '__main__':
+    lista_de_valores = generar_lista(NUMERO, MIN, MAX)
+    lista_de_valores.sort()
+    objetivo = random.randint(MIN, MAX)
 
-# # Uncomment to debug
-# print(f'Lista: {lista_de_valores}')
-# print(f'Objectivo: {objetivo}')
-# print(f'Obj count: {lista_de_valores.count(objetivo)}')
+    # # Uncomment to test not found
+    # objetivo = MAX + 1
 
-# Values may repeat
-index_ingenua = busqueda_ingenua(lista_de_valores, objetivo)
-print(f'Index: {index_ingenua}')
+    # # Uncomment to debug
+    # print(f'Lista: {lista_de_valores}')
+    # print(f'Objectivo: {objetivo}')
+    # print(f'Obj count: {lista_de_valores.count(objetivo)}')
+    # try:
+    #     print(f'idx: {lista_de_valores.index(objetivo)}')
+    # except:
+    #     print(f'{objetivo} is not in list')
 
-index_binaria = busqueda_binaria(lista_de_valores, objetivo)
-print(f'Index: {index_binaria}')
+    # Values may repeat, so the index may differ if there is a
+    #   series of objetivo values in lista_de_valores
+
+    # # Uncomment to run untimed
+    # index_ingenua = busqueda_ingenua(lista_de_valores, objetivo)
+    # print(f'Index: {index_ingenua}')
+
+    # index_binaria = busqueda_binaria(lista_de_valores, objetivo)
+    # print(f'Index: {index_binaria}')
+
+    # Uncomment to time runs
+    inicio =  timeit.time.perf_counter_ns()
+    index_ingenua = busqueda_ingenua(lista_de_valores, objetivo)
+    print(f'Index: {index_ingenua}',
+          f'\tingenio: {timeit.time.perf_counter_ns() - inicio}'
+         )
+
+    inicio =  timeit.time.perf_counter_ns()
+    index_binaria = busqueda_binaria(lista_de_valores, objetivo)
+    print(f'Index: {index_binaria}',
+          f'\tbinario: {timeit.time.perf_counter_ns() - inicio}'
+         )
