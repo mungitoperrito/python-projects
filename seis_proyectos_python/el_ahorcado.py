@@ -65,7 +65,10 @@ def jugar(palabra):
     # print(palabra) # DEBUG
     # print(palabra_letras) # DEBUG
 
-    print(f'La palabra es: {palabra_letras}')
+    print(f'La palabra es: ', end='')
+    for l in palabra_letras:
+        print(f'{l} ', end='')
+    print('\n')
 
     while vidas > 0:
         rondas += 1
@@ -87,10 +90,15 @@ def jugar(palabra):
 
         # Update info for this round
         print(dibujos[vidas])
-        print(f'Tienes: {palabra_letras}')
+        print(f'Tienes: ', end='')
+        for l in palabra_letras:
+            print(f'{l} ', end='')
+        print('\n')
         print(f'Adivinada: {sorted(letras_adivinadas)}')
         print("\n")
 
+    # Perdio - llega sin vidas
+    print(f'Perdiste, la palabra era: {palabra}.')
 
 def obtener_letra():
     letra = input(f'Entra una letra: ')
