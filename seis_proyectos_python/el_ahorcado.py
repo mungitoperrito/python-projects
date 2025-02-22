@@ -27,13 +27,13 @@ def escoger_palabra():
     lista_de_palabras = []
 
     try:
-        with open(LISTA_DE_PALABRAS) as f:
+        with open(LISTA_DE_PALABRAS, encoding="utf-8") as f:
             for line in f.readlines():
                 lista_de_palabras.append(line.strip())
     except FileNotFoundError:
         print(f"No encuentra el archivo, {LISTA_DE_PALABRAS}.")
-    except IOError:
-        print(f"Error leyendo el archivo, {LISTA_DE_PALABRAS}.")
+
+    # No error handling for blank lines, broken lines
 
     length = len(lista_de_palabras)
     index = random.randint(0, length - 1)
@@ -45,7 +45,7 @@ def escoger_palabra():
 def update_palabra(palabra_letras, palabra, letra):
     index = 0
 
-    while True
+    while True:
         index = palabra.find(letra, index)
         if index == -1:
             break
@@ -62,8 +62,10 @@ def jugar(palabra):
     palabra_letras = ['_' for x in list(palabra)]
     letras_adivinadas = set()
     vidas = 6
-    print(palabra) # DEBUG
+    # print(palabra) # DEBUG
     # print(palabra_letras) # DEBUG
+
+    print(f'La palabra es: {palabra_letras}')
 
     while vidas > 0:
         rondas += 1
@@ -77,14 +79,17 @@ def jugar(palabra):
 
         if letra in palabra:
             palabra_letras = update_palabra(palabra_letras, palabra, letra)
-            print(palabra_letras)
+            if '_' not in palabra_letras:
+                print(f'\n¡Ganaste en {rondas} rondas!')
+                exit()
         else:
             vidas -= 1
 
         # Update info for this round
-        print("\n")
-        print(f"Adivinada: {sorted(letras_adivinadas)}")
         print(dibujos[vidas])
+        print(f'Tienes: {palabra_letras}')
+        print(f'Adivinada: {sorted(letras_adivinadas)}')
+        print("\n")
 
 
 def obtener_letra():
