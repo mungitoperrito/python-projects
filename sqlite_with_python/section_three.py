@@ -15,12 +15,41 @@ db = sqlite3.connect(PROJECT_PATH + 'customer.db')
 # Create a cursor
 cursor = db.cursor()
 
-# Uncomment to see table and row ids
-view_table = cursor.execute('SELECT rowid, * FROM customers;')
-print(view_table.fetchall())
-
+# # Uncomment to see table and row ids
+# view_table = cursor.execute('SELECT rowid, * FROM customers;')
+# print(view_table.fetchall())
 
 # Select rows
+tmp = cursor.execute('''
+    SELECT *
+    FROM customers
+    WHERE last_name LIKE "Ram%";
+    ''')
+rows = tmp.fetchall()
+for row in rows:
+    print(row)
+print()
+
+# Select one
+#     Just returns the one item, not the cursor object
+one_row = cursor.execute('''
+    SELECT *
+    FROM customers
+    WHERE last_name LIKE "Ram%";
+    ''').fetchone()
+print(one_row)
+print()
+
+# Select multiple
+#     Just returns the list, not the cursor object
+many_rows = cursor.execute('''
+    SELECT *
+    FROM customers
+    WHERE last_name LIKE "Ram%";
+    ''').fetchmany(3)
+for row in many_rows:
+    print(row)
+print()
 
 # Close the db connection
 db.close()
