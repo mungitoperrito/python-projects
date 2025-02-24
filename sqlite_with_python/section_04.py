@@ -20,18 +20,20 @@ cursor = db.cursor()
 # print(view_table.fetchall())
 
 # Select rows
-tmp = cursor.execute('''
-    SELECT *
-    FROM customers
-    WHERE last_name LIKE "Ram%";
+cursor.execute('''
+    UPDATE customers
+    SET email = "dee_dee@ceebees.com"
+    WHERE email = "deedee@ceebees.com";
     ''')
-rows = tmp.fetchall()
+
+cursor.execute('SELECT * FROM customers;')
+rows = cursor.fetchall()
 for row in rows:
     print(row)
 print()
 
-# Commit the changes
-db.commit()
+# # Commit the changes
+# db.commit()
 
 # Close the db connection
 db.close()
