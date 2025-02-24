@@ -1,3 +1,4 @@
 .idea/*
 __pycache__
 report.html
+sqlite_with_python/*.db
