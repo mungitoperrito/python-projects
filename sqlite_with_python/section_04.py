@@ -30,26 +30,8 @@ for row in rows:
     print(row)
 print()
 
-# Select one
-#     Just returns the one item, not the cursor object
-one_row = cursor.execute('''
-    SELECT *
-    FROM customers
-    WHERE last_name LIKE "Ram%";
-    ''').fetchone()
-print(one_row)
-print()
-
-# Select multiple
-#     Just returns the list, not the cursor object
-many_rows = cursor.execute('''
-    SELECT *
-    FROM customers
-    WHERE last_name LIKE "Ram%";
-    ''').fetchmany(3)
-for row in many_rows:
-    print(row)
-print()
+# Commit the changes
+db.commit()
 
 # Close the db connection
 db.close()
