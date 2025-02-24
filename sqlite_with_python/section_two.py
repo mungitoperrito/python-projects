@@ -17,7 +17,7 @@ cursor = db.cursor()
 
 # Insert rows
 #    sqlite isn't inserting duplicate rows after renunning the script.
-#    Don't know why
+#    SOLVED: The db.commit() statement was missing
 cursor.execute('''
     INSERT INTO customers
     VALUES ("Joey", "Ramone", "joey@ceebees.com"),
@@ -32,6 +32,9 @@ print(row_count.fetchone()[0])
 
 view_table = cursor.execute('SELECT * FROM customers;')
 print(view_table.fetchone())
+
+# Commit the changes
+db.commit()
 
 # Close the db connection
 db.close()

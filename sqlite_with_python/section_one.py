@@ -34,23 +34,13 @@ if exists.fetchall()[0][0] == False:
     ''')
 
 # # Uncomment to drop the table
-# exists = cursor.execute('''
-#     SELECT COUNT(name)
-#     FROM sqlite_master
-#     WHERE type='table' AND name='customers';
-# ''')
-# print(f'Before DROP: {exists.fetchall()[0][0]}')
-
 # cursor.execute('''
 #     DROP TABLE IF EXISTS 'customers';
 # ''')
 
-# exists = cursor.execute('''
-#     SELECT COUNT(name)
-#     FROM sqlite_master
-#     WHERE type='table' AND name='customers';
-# ''')
-# print(f'After DROP: {exists.fetchall()[0][0]}')
+
+# Commit the changes
+db.commit()
 
 # Close the db connection
 db.close()
