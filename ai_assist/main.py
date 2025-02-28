@@ -1,5 +1,5 @@
 from pynput import keyboard
-from pynput.keyboard import Key
+from pynput.keyboard import Key, Controller
 
 # CONSTANTS
 F8 = str(Key.f8.value)
@@ -34,6 +34,7 @@ def on_f10():
 ############
 ### MAIN ###
 ############
+
 
 with keyboard.GlobalHotKeys({
         F8 : on_f8,
