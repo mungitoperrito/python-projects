@@ -1,8 +1,10 @@
+import httpx
 import pyperclip
 import time
 
 from pynput import keyboard
 from pynput.keyboard import Key, Controller
+from string import Template
 
 # CONSTANTS
 F8 = str(Key.f8.value)    # For exit
@@ -10,9 +12,40 @@ F9 = str(Key.f9.value)    # For fix line
 F10 = str(Key.f10.value)  # For fix selection
 SLEEP_DELAY = 0.3         # Allow for data transfer
 
+OLLAMA_GEN = "http://localhost:11434/api/generate"   # Local Ollama instance
+OLLAMA_CONFIG = {"model": "mistral:instruct",
+                 "keep_alive": "5m",
+                 "stream": False
+                 }
+OLLAMA_HEADERS = {"Content-Type": "application/json"}
+
+PROMPT_TEMPLATE = Template(
+     """Fix all typos; fix all casing; fix all punctuation; and preserve
+        any new line characters in this text:
+
+        $text
+
+        Return only the corrected text. Do not include a preamble.
+    """
+)
 
 def fix_text(text):
-    return text[::-1]
+    # Two 'text's: placeholder(from above) = argument(from function def)
+    prompt = PROMPT_TEMPLATE.substitute(text=text)
+
+    response = httpx.post(OLLAMA_GEN,
+                json={"prompt": prompt, **OLLAMA_CONFIG},
+                headers=OLLAMA_HEADERS,
+                # Set to 10 in video. Ollama is very slow on my machine
+                timeout=300
+    )
+
+    if response.status_code != 200:
+        print(f"ERROR: returned {response.status_code}")
+
+        return None
+
+    return response.json(['response'].strip())
 
 
 def fix_current_line():
