@@ -45,7 +45,9 @@ def fix_text(text):
 
         return None
 
-    return response.json(['response'].strip())
+    # Note: Returns Ollama discussion for empty input line
+
+    return response.json()['response'].strip()
 
 
 def fix_current_line():
@@ -70,18 +72,18 @@ def fix_selection():
     time.sleep(SLEEP_DELAY)
     text = pyperclip.paste()
 
-    print(f"Copy: {text}")  # DEBUG
+    # print(f"Copy: {text}")  # DEBUG
 
     # Step 3 - fix the text
     fixed_text = fix_text(text)
 
-    print(f"Fixed: {fixed_text}")  # DEBUG
+    # print(f"Fixed: {fixed_text}")  # DEBUG
 
     # Step 4 - copy the text to the clipboard
     pyperclip.copy(fixed_text)
     time.sleep(SLEEP_DELAY)
 
-    print(f"Paste: {fixed_text}")  # DEBUG
+    # print(f"Paste: {fixed_text}")  # DEBUG
 
     # Step 5 - paste text into the doc
     with controller.pressed(Key.ctrl):
