@@ -32,14 +32,15 @@ def fix_selection():
     print(f"Copy: {text}")  # DEBUG
 
     # Step 3 - fix the text
-    text = fix_text(text)
+    fixed_text = fix_text(text)
 
-    print(f"Fixed: {text}")  # DEBUG
+    print(f"Fixed: {fixed_text}")  # DEBUG
 
     # Step 4 - copy the text to the clipboard
+    pyperclip.copy(fixed_text)
     time.sleep(SLEEP_DELAY)
-    # pyperclip.paste(text)
-    # print(f"Paste: {text}")  # DEBUG
+
+    print(f"Paste: {fixed_text}")  # DEBUG
 
     # Step 5 - paste text into the doc
     with controller.pressed(Key.ctrl):
