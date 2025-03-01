@@ -1,39 +1,78 @@
+import pyperclip
+import time
+
 from pynput import keyboard
-from pynput.keyboard import Key
+from pynput.keyboard import Key, Controller
 
 # CONSTANTS
-F8 = str(Key.f8.value)
-F9 = str(Key.f9.value)
-F10 = str(Key.f10.value)
+F8 = str(Key.f8.value)    # For exit
+F9 = str(Key.f9.value)    # For fix line
+F10 = str(Key.f10.value)  # For fix selection
+SLEEP_DELAY = 0.3         # Allow for data transfer
+
+
+def fix_text(text):
+    return text[::-1]
 
 
 def fix_current_line():
-    pass
+    # Select the current line <ctrl><i>
+    controller.press(Key.ctrl)
+    controller.press('i')
+    controller.release(Key.ctrl)
+    controller.release('i')
+
+    # Call fix_selection to work on the selected line
+    fix_selection()
 
 
 def fix_selection():
-    pass
+    # Assumes there is alredy a selected chunk of text
+
+    # Step 1 - copy text to clipboard
+    with controller.pressed(Key.ctrl):
+        controller.tap('c')
+
+    # Step 2 - get the text from the clipboard
+    time.sleep(SLEEP_DELAY)
+    text = pyperclip.paste()
+
+    print(f"Copy: {text}")  # DEBUG
+
+    # Step 3 - fix the text
+    fixed_text = fix_text(text)
+
+    print(f"Fixed: {fixed_text}")  # DEBUG
+
+    # Step 4 - copy the text to the clipboard
+    pyperclip.copy(fixed_text)
+    time.sleep(SLEEP_DELAY)
+
+    print(f"Paste: {fixed_text}")  # DEBUG
+
+    # Step 5 - paste text into the doc
+    with controller.pressed(Key.ctrl):
+        controller.tap('v')
 
 
 def on_f8():
-    print('F8')
     exit()
 
 
 def on_f9():
-    print('F9')
     fix_current_line()
 
 
 def on_f10():
-    print('F10')
     fix_selection()
-
 
 
 ############
 ### MAIN ###
 ############
+
+# Create keyboard control object
+controller = Controller()
 
 with keyboard.GlobalHotKeys({
         F8 : on_f8,
