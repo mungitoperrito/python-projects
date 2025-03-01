@@ -19,6 +19,9 @@ OLLAMA_CONFIG = {"model": "mistral:instruct",
                  }
 OLLAMA_HEADERS = {"Content-Type": "application/json"}
 
+# NOTE: The "mistral:instruct" model is really slow.
+#       The "mistral:7b-instruct-v0.2-q4_K_S" model is
+
 PROMPT_TEMPLATE = Template(
      """Fix all typos; fix all casing; fix all punctuation; and preserve
         any new line characters in this text:
