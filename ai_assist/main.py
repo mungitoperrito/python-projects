@@ -10,6 +10,11 @@ F9 = str(Key.f9.value)    # For fix line
 F10 = str(Key.f10.value)  # For fix selection
 SLEEP_DELAY = 0.3         # Allow for data transfer
 
+
+def fix_text(text):
+    return text[::-1]
+
+
 def fix_current_line():
     pass
 
@@ -24,10 +29,17 @@ def fix_selection():
     time.sleep(SLEEP_DELAY)
     text = pyperclip.paste()
 
-    # Step 3 -
+    print(f"Copy: {text}")  # DEBUG
+
+    # Step 3 - fix the text
+    text = fix_text(text)
+
+    print(f"Fixed: {text}")  # DEBUG
 
     # Step 4 - copy the text to the clipboard
-    pyperclip.paste(text)
+    time.sleep(SLEEP_DELAY)
+    # pyperclip.paste(text)
+    # print(f"Paste: {text}")  # DEBUG
 
     # Step 5 - paste text into the doc
     with controller.pressed(Key.ctrl):
