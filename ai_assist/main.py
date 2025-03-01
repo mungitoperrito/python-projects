@@ -16,10 +16,18 @@ def fix_text(text):
 
 
 def fix_current_line():
-    pass
+    # Select the current line <ctrl><i>
+    controller.press(Key.ctrl)
+    controller.press('i')
+    controller.release(Key.ctrl)
+    controller.release('i')
+
+    # Call fix_selection to work on the selected line
+    fix_selection()
 
 
 def fix_selection():
+    # Assumes there is alredy a selected chunk of text
 
     # Step 1 - copy text to clipboard
     with controller.pressed(Key.ctrl):
@@ -48,19 +56,15 @@ def fix_selection():
 
 
 def on_f8():
-    print('F8')
     exit()
 
 
 def on_f9():
-    print('F9')
     fix_current_line()
 
 
 def on_f10():
-    print('F10')
     fix_selection()
-
 
 
 ############
