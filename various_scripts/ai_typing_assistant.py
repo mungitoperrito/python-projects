@@ -1,3 +1,8 @@
+# Source
+# Build a free writing assistant with Python and Ollama
+# https://www.youtube.com/watch?v=IUTFrexghsQ
+
+
 import httpx
 import pyperclip
 import time

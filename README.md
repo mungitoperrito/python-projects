@@ -6,6 +6,7 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
 
 - Courses
   - [European python class](euro_python/) - [Course site](https://python_course.eu/)
+  - [Object Orient Programing in Python](oop_in_python/) - [Course site](https://www.youtube.com/watch?v=-pEs-Bss8Wc)
   - [Object Orient Programing with Python](oop_with_python/) - [Course site](https://www.youtube.com/watch?v=Ej_02ICOIgs)
   - [Python for Everybody](py_for_everybody/) - [Book site](https://www.py4e.com/html3/)
   - [Python OO Programing](python_oo_programming/) - [Course site](https://www.youtube.com/watch?v=iLRZi0Gu8Go)
@@ -21,6 +22,7 @@ Most of this code uses Python v3. Some of this code is older and uses Python v2.
   - [Karat](/various_scripts/interview_problem_karat.py)
 - [Project Euler](project_euler)
 - Scripts
+  - [AI Typing assistant](/various_scripts/ai_typing_assistant.py)
   - [Arthimetic worksheet generator](/various_scripts/simple_arithmetic.py)
   - [Birthday paradox stats generator](/various_scripts/paradox.py)
   - GitLab
