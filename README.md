@@ -41,9 +41,12 @@ Python v2.
     - [Collect runner diagnostics](/various_scripts/gitlab_runner_diagnostic.py)
   - [Property based testing](/various_scripts/property_based_testing.py)
     and some [tests](/various_scripts/test_property_based_testing.py)
+  - Selenium
+    - [Simple tests](/various-scripts/selenium_pyorg.01.py)
+    - [Connection basic](various_scripts/test_python_org_search_basic.py)
+    - [Connection unittest](various_scripts/test_python_org_search.py)
   - [Statement execution order](/various-scripts/order_of_execution.py)
   - [SVN usage statistics](/various_scripts/gather_svn_stats.py)
-- [Selenium](selenium)
 - Weaviate
   - [Bug reproducer - code](/weaviate/recreate_tenant_removal_error.py)
   - [Bug reproducer - debugging code](/weaviate/recreate_tenant_removal_error_full_script.py)
