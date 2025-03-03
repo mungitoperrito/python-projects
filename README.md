@@ -1,22 +1,32 @@
 # Python projects, scripts, utilities
 
-This repo contains various utility scripts. It also has some small projects, and exercise code from learning sites.
+This repo contains various utility scripts. It also has some small
+projects and exercise code from learning sites.
 
-Most of this code uses Python v3. Some of this code is older and uses Python v2.
+Most of this code uses Python v3. Some of this code is older and uses
+Python v2.
 
 - Courses
-  - [European python class](euro_python/) - [Course site](https://python_course.eu/)
-  - [Object Orient Programing in Python](oop_in_python/) - [Course site](https://www.youtube.com/watch?v=-pEs-Bss8Wc)
-  - [Object Orient Programing with Python](oop_with_python/) - [Course site](https://www.youtube.com/watch?v=Ej_02ICOIgs)
-  - [Python for Everybody](py_for_everybody/) - [Book site](https://www.py4e.com/html3/)
-  - [Python OO Programing](python_oo_programming/) - [Course site](https://www.youtube.com/watch?v=iLRZi0Gu8Go)
-  - [TAU Test automation](test_automation_tau/) - [Course site](https://testautomationu.applitools.com)
-    - [Python course](test_automation_tau/python_tutorial/)
+  - [European python class](courses/euro_python/) -
+    [Course site](https://python_course.eu/)
+  - [Object Orient Programing in Python](courses/oop_in_python/) -
+    [Course site](https://www.youtube.com/watch?v=-pEs-Bss8Wc)
+  - [Object Orient Programing with Python](courses/oop_with_python/) -
+    [Course site](https://www.youtube.com/watch?v=Ej_02ICOIgs)
+  - [Python for Everybody](courses/py_for_everybody/) -
+    [Book site](https://www.py4e.com/html3/)
+  - [Python OO Programing](courses/python_oo_programming/) -
+    [Course site](https://www.youtube.com/watch?v=iLRZi0Gu8Go)
+  - [TAU Test automation](courses/test_automation_tau/) -
+    [Course site](https://testautomationu.applitools.com)
+    - [Python course]courses/(test_automation_tau/python_tutorial/)
       [Course site](https://testautomationu.applitools.com/python-tutorial/)
-    - [Pytest course](test_automation_tau/pytest_tutorial/)
+    - [Pytest course](courses/test_automation_tau/pytest_tutorial/)
       [Course site](https://testautomationu.applitools.com/pytest-tutorial)
-  - [Seis proyectos de python](seis_proyectos_python) - [Course site](https://www.youtube.com/watch?v=tWnyBD2src0)
-  - [SQLite Databases With Python](sqlite_with_python) - [Course site](https://www.youtube.com/watch?v=byHcYRpMgI4)
+  - [Seis proyectos de python](courses/seis_proyectos_python) -
+    [Course site](https://www.youtube.com/watch?v=tWnyBD2src0)
+  - [SQLite Databases With Python](courses/sqlite_with_python) -
+    [Course site](https://www.youtube.com/watch?v=byHcYRpMgI4)
 - Interview questions
   - [Short questions](/various_scripts/interview_short_questions.py)
   - [Karat](/various_scripts/interview_problem_karat.py)
