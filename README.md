@@ -19,7 +19,7 @@ Python v2.
     [Course site](https://www.youtube.com/watch?v=iLRZi0Gu8Go)
   - [TAU Test automation](courses/test_automation_tau/) -
     [Course site](https://testautomationu.applitools.com)
-    - [Python course]courses/(test_automation_tau/python_tutorial/)
+    - [Python course](courses/test_automation_tau/python_tutorial/)
       [Course site](https://testautomationu.applitools.com/python-tutorial/)
     - [Pytest course](courses/test_automation_tau/pytest_tutorial/)
       [Course site](https://testautomationu.applitools.com/pytest-tutorial)
