@@ -42,7 +42,7 @@ Python v2.
   - [Property based testing](/various_scripts/property_based_testing.py)
     and some [tests](/various_scripts/test_property_based_testing.py)
   - Selenium
-    - [Simple tests](/various-scripts/selenium_pyorg.01.py)
+    - [Simple tests](/various_scripts/selenium_pyorg.01.py)
     - [Connection basic](various_scripts/test_python_org_search_basic.py)
     - [Connection unittest](various_scripts/test_python_org_search.py)
   - [Statement execution order](/various-scripts/order_of_execution.py)
