@@ -9,8 +9,6 @@ Python v2.
 - Courses
   - [European python class](courses/euro_python/) -
     [Course site](https://python_course.eu/)
-  - [Object Orient Programing in Python](courses/oop_in_python/) -
-    [Course site](https://www.youtube.com/watch?v=-pEs-Bss8Wc)
   - [Object Orient Programing with Python](courses/oop_with_python/) -
     [Course site](https://www.youtube.com/watch?v=Ej_02ICOIgs)
   - [Python for Everybody](courses/py_for_everybody/) -
