@@ -33,6 +33,10 @@ Python v2.
   - [AI Typing assistant](/various_scripts/ai_typing_assistant.py)
   - [Arthimetic worksheet generator](/various_scripts/simple_arithmetic.py)
   - [Birthday paradox stats generator](/various_scripts/paradox.py)
+  - Bug investigation
+    - [Bug reproducer - code](/various_scripts/recreate_tenant_removal_error.py)
+    - [Bug reproducer - debugging
+      code](/various_scripts/recreate_tenant_removal_error_full_script.py)
   - GitLab
     - [Scrape snippets](/various_scripts/gitlab_collect_and_move_snippets.py)
     - [Scrape usernames](/various_scripts/gitlab_get_usernames.py)
@@ -45,9 +49,3 @@ Python v2.
     - [Connection unittest](various_scripts/test_python_org_search.py)
   - [Statement execution order](/various-scripts/order_of_execution.py)
   - [SVN usage statistics](/various_scripts/gather_svn_stats.py)
-- Weaviate
-  - [Bug reproducer - code](/weaviate/recreate_tenant_removal_error.py)
-  - [Bug reproducer - debugging code](/weaviate/recreate_tenant_removal_error_full_script.py)
-  - [Crossword puzzle generator - OLLAMA](https://github.com/mungitoperrito/wrk_weaviate_ollama/tree/main)
-  - [Crossword puzzle generator - API](https://github.com/mungitoperrito/wrk_crossword_api/tree/main)
-  - [Tutorial walkthrough](/weaviate/multi_tenant_walkthrough.ipynb)
