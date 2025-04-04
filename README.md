@@ -26,26 +26,26 @@ Python v2.
   - [SQLite Databases With Python](courses/sqlite_with_python) -
     [Course site](https://www.youtube.com/watch?v=byHcYRpMgI4)
 - Interview questions
-  - [Short questions](/various_scripts/interview_short_questions.py)
-  - [Karat](/various_scripts/interview_problem_karat.py)
+  - [Short questions](/scripts/interview_short_questions.py)
+  - [Karat](/scripts/interview_problem_karat.py)
 - [Project Euler](project_euler)
 - Scripts
-  - [AI Typing assistant](/various_scripts/ai_typing_assistant.py)
-  - [Arthimetic worksheet generator](/various_scripts/simple_arithmetic.py)
-  - [Birthday paradox stats generator](/various_scripts/paradox.py)
+  - [AI Typing assistant](/scripts/ai_typing_assistant.py)
+  - [Arthimetic worksheet generator](/scripts/simple_arithmetic.py)
+  - [Birthday paradox stats generator](/scripts/paradox.py)
   - Bug investigation
-    - [Bug reproducer - code](/various_scripts/recreate_tenant_removal_error.py)
+    - [Bug reproducer - code](/scripts/recreate_tenant_removal_error.py)
     - [Bug reproducer - debugging
-      code](/various_scripts/recreate_tenant_removal_error_full_script.py)
+      code](/scripts/recreate_tenant_removal_error_full_script.py)
   - GitLab
-    - [Scrape snippets](/various_scripts/gitlab_collect_and_move_snippets.py)
-    - [Scrape usernames](/various_scripts/gitlab_get_usernames.py)
-    - [Collect runner diagnostics](/various_scripts/gitlab_runner_diagnostic.py)
-  - [Property based testing](/various_scripts/property_based_testing.py)
-    and some [tests](/various_scripts/test_property_based_testing.py)
+    - [Scrape snippets](/scripts/gitlab_collect_and_move_snippets.py)
+    - [Scrape usernames](/scripts/gitlab_get_usernames.py)
+    - [Collect runner diagnostics](/scripts/gitlab_runner_diagnostic.py)
+  - [Property based testing](/scripts/property_based_testing.py)
+    and some [tests](/scripts/test_property_based_testing.py)
   - Selenium
-    - [Simple tests](/various_scripts/selenium_pyorg.01.py)
-    - [Connection basic](various_scripts/test_python_org_search_basic.py)
-    - [Connection unittest](various_scripts/test_python_org_search.py)
+    - [Simple tests](/scripts/selenium_pyorg.01.py)
+    - [Connection basic](scripts/test_python_org_search_basic.py)
+    - [Connection unittest](scripts/test_python_org_search.py)
   - [Statement execution order](/various-scripts/order_of_execution.py)
-  - [SVN usage statistics](/various_scripts/gather_svn_stats.py)
+  - [SVN usage statistics](/scripts/gather_svn_stats.py)
