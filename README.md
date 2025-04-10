@@ -26,8 +26,9 @@ Python v2.
   - [SQLite Databases With Python](courses/sqlite_with_python) -
     [Course site](https://www.youtube.com/watch?v=byHcYRpMgI4)
 - Interview questions
-  - [Short questions](/scripts/interview_short_questions.py)
   - [Karat](/scripts/interview_problem_karat.py)
+  - [Read some code](/scripts/interview_read_code_01.py)
+  - [Short questions](/scripts/interview_short_questions.py)
 - [Project Euler](project_euler)
 - Scripts
   - [AI Typing assistant](/scripts/ai_typing_assistant.py)
