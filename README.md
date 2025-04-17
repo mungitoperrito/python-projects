@@ -26,9 +26,13 @@ Python v2.
   - [SQLite Databases With Python](courses/sqlite_with_python) -
     [Course site](https://www.youtube.com/watch?v=byHcYRpMgI4)
 - Interview questions
-  - [Karat](/scripts/interview_problem_karat.py)
-  - [Read some code](/scripts/interview_read_code_01.py)
-  - [Short questions](/scripts/interview_short_questions.py)
+  - People asked me
+     - [Karat](/scripts/interview_problem_karat.py)
+     - [Short questions](/scripts/interview_short_questions.py)
+  - I asked other people
+     - [Nested loops, repeated values](/scripts/interview_read_code_01.py)
+     - [Reverse a string](/scripts/interview_read_code_02.py)
+     - [Conditionals](/scripts/interview_read_code_03.py)
 - [Project Euler](project_euler)
 - Scripts
   - [AI Typing assistant](/scripts/ai_typing_assistant.py)

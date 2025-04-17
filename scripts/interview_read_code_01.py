@@ -1,4 +1,6 @@
-input_list = ['a', 'b', 'c', 'd', 'e']
+# Questions for interview candidates:
+# What does this code do?
+
 
 def mystery_function_01(input_list):
     output = []
@@ -17,6 +19,8 @@ def mystery_function_02(input_list):
 
     return output
 
+
+input_list = ['a', 'b', 'c', 'd', 'e']
 
 print(f"Mystery function 01: {mystery_function_01(input_list)}")
 print(f"Mystery function 02: {mystery_function_02(input_list)}")
