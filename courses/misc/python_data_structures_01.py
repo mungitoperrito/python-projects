@@ -29,16 +29,26 @@ def list_name(some_list):
 # for l in [list_02, list_03, list_04, list_05]:
 #    print(f"{list_name(l)}: {l} ")
 
-# 03
-list_06 = ['a', 'b', 'c']
-list_07 = ['d', 'e', 'f']
-list_08 = list_06[:] ; list_08.append(list_07)
-list_09 = list_06[:] ; list_09.extend(list_07)
-list_10 = list_06[:] ; list_10.remove('b')
-list_11 = list_06 + list_07            # NOTE list_name gets this wrong
-list_12 = list_06[:] ; list_12.pop(1)  # Delete value by index
+# # 03
+# list_06 = ['a', 'b', 'c']
+# list_07 = ['d', 'e', 'f']
+# list_08 = list_06[:] ; list_08.append(list_07)
+# list_09 = list_06[:] ; list_09.extend(list_07)
+# list_10 = list_06[:] ; list_10.remove('b')
+# list_11 = list_06 + list_07            # NOTE list_name gets this wrong
+# list_12 = list_06[:] ; list_12.pop(1)  # Delete value by index
 
-for l in [list_06, list_07, list_08, list_09, list_10, list_11, list_12]:
-   print(f"{list_name(l)}: {l} ")
+# for l in [list_06, list_07, list_08, list_09, list_10, list_11, list_12]:
+#    print(f"{list_name(l)}: {l} ")
+
+
+# 04
+# List assignment is two names for one object. List copy is two objects
+list_13 = [1,2,3]
+list_14 = list_13
+list_15 = list_13[:]
+print(f"list_13: {list_13}, list_14: {list_14}, list_15: {list_15}")
+list_13.append(4)
+print(f"list_13: {list_13}, list_14: {list_14}, list_15: {list_15}")
 
 
