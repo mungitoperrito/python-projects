@@ -3,7 +3,7 @@
 This experiment uses [Claude AI](https://claude.ai/new) to create a small app. The process 
 unfolds over several steps. 
 
-## ENVIRONMENT SETUP
+## Environment setup
 
 ```bash
 cd temp                                        # Go to an empty workspace
@@ -19,15 +19,16 @@ mkdir hello_flask                              # Create project directory
 cd !$                                          # Switch directories  
 ```
 
-## DEPENDENCIES
+## Dependencies
 
-**CAUTION** Check `pip` version first. If pyenv isn't first in `PATH`, the wrong `pip` will run.
+**CAUTION** Check the`pip` version first. If `pyenv` isn't the first directory in the `PATH`, the wrong
+version of `pip` may run.
 
 ```bash
 pip install flask
 ```
 
-## PROMPTS
+## Prompts
 
 1. Create the app skeleton.
 
@@ -38,7 +39,7 @@ Use python
 Use flask
 ```
 
-1. Write some unit tests
+2. Write some unit tests
 
 ```
 Add a unit test for the '/hello/<name>' endpoint 
@@ -46,13 +47,13 @@ Add a unit test for the '/hello/<name>' endpoint
 
 NOTE: Claude added several unit tests to the source file
 
-1. Refactor the source file
+3. Refactor the source file
 
 ```
 break the tests out into their own file
 ```
 
-1. Use `cURL` to check the API endpoints
+4. Use `cURL` to check the API endpoints
 
 ```
 what is the curl command to test the name endpoint?
@@ -66,6 +67,10 @@ show the http response code
 
 ```bash
 curl -w "\nHTTP Status: %{http_code}\n" http://localhost:5000/hello/Alice
+```
+Response:
+
+```bash
 <h1>Hello, Alice!</h1><p>Nice to meet you!</p>
 HTTP Status: 200
 ```
@@ -74,6 +79,10 @@ HTTP Status: 200
 
 ```bash
 curl -i http://localhost:5000/hello/Alice
+```
+Response:
+
+```bash
 HTTP/1.1 200 OK
 Server: Werkzeug/3.1.3 Python/3.13.7
 Date: Mon, 15 Sep 2025 03:00:05 GMT
@@ -87,7 +96,12 @@ Connection: close
 * Status only: `cURL -s`
 ```bash
 curl -s -o /dev/null -w "%{http_code}\n" http://localhost:5000/hello/Alice
+```
+Response:
+
+```bash
 200
 ```
 
 NOTE: This format string needed a new-line character.
+
