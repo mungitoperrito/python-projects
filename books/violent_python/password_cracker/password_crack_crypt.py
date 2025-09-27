@@ -1,4 +1,13 @@
-import crypt        # crypt is deprecated in 3.12
+# Use the crypt library and a cleartext list to decrypt passwords
+
+# NOTE: crypt is deprecated in 3.12
+# Comment to see depreciation warnings
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+import crypt
+
+DEBUG = False
 
 def crack_password(encrypted_password, cleartext_list):
     # Extract salt
@@ -10,18 +19,23 @@ def crack_password(encrypted_password, cleartext_list):
         for word in clear_list.readlines():
             word = word.rstrip('\n')
             encrypted_test_word = crypt.crypt(word, salt)
-            print(f"DB02 word: {word}   salt: {salt} enc: {encrypted_test_word}")
+
+            if encrypted_test_word == encrypted_password:
+                print(f"{encrypted_password}: {word}")
+                return
+        print(f"{encrypted_password} is not in the dictionary list")
 
 def main():
     cleartext_list = "list_cleartext.txt"
-    # password_list = "list_passwords_crypt.txt"
-    password_list = ["one", "two", "three"]
+    password_list = "list_passwords_crypt.txt"
 
-    for pwd in password_list:
-        crack_password(pwd, cleartext_list)
+    with open(password_list, 'r') as pwd_list:
+        for pwd in pwd_list:
+            crack_password(pwd.rstrip('\n'), cleartext_list)
 
 if __name__ == "__main__":
-    import sys
+    if DEBUG:
+        import sys
+        print(sys.version)
 
-    print(sys.version)
     main()
