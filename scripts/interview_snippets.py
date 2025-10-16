@@ -37,7 +37,8 @@ text = [paragraph_01, paragraph_02]
 
 for paragraph in text:
     for letter in paragraph.lower():
-        if letter in string.ascii_lowercase:
+        # if letter in string.ascii_lowercase:     # Alternate approach
+        if letter in 'abcdefghijklmnopqrstuvwxyz':
             counts[letter] += 1
 
 # # Uncomment to print all counts
