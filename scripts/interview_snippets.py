@@ -84,3 +84,21 @@ paragraph_02 ="So she was considering in her own mind (as well as she could," \
 # assert input_string == reverse_03(reverse_03(input_string))
 
 
+########################################################################
+# QUESTION: Write a function that takes a positive integer and prints  #
+#           the second odd number that is greater than the integer.    #
+########################################################################
+
+
+def second_greater(start_int):
+    # Check if odd or even
+    if (start_int % 2 == 0):
+        return start_int + 3
+    else:
+        return start_int + 4
+
+if __name__ == '__main__':
+
+    for n in [1, 4, 5]:
+        print(f"number: {n}  2d odd number: {second_greater(n)}")
+
