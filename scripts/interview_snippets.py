@@ -29,25 +29,58 @@ paragraph_02 ="So she was considering in her own mind (as well as she could," \
 
 # # Method 2
 # # Uncomment to count all letters
-from collections import defaultdict
-import string
+# from collections import defaultdict
+# import string
 
-counts = defaultdict(int)
-text = [paragraph_01, paragraph_02]
+# counts = defaultdict(int)
+# text = [paragraph_01, paragraph_02]
 
-for paragraph in text:
-    for letter in paragraph.lower():
-        # if letter in string.ascii_lowercase:     # Alternate approach
-        if letter in 'abcdefghijklmnopqrstuvwxyz':
-            counts[letter] += 1
+# for paragraph in text:
+#     for letter in paragraph.lower():
+#         # if letter in string.ascii_lowercase:     # Alternate approach
+#         if letter in 'abcdefghijklmnopqrstuvwxyz':
+#             counts[letter] += 1
 
 # # Uncomment to print all counts
-# for (k,v) in sorted(counts.items()):
-#     print(f"{k}: {v}")
+# # for (k,v) in sorted(counts.items()):
+# #     print(f"{k}: {v}")
 
-# Uncomment to print just 'a' counts
-print(f"count: {counts['a']}")
+# # Uncomment to print just 'a' counts
+# print(f"count: {counts['a']}")
 
 
+########################################################################
+# QUESTION: Write a function to reverse a string. Write some code to   #
+#           test your function.                                        #
+########################################################################
+
+# def reverse_01(original_str):
+#     # Explicit starting point
+#     return original_str[len(original_str)::-1]
+
+# def reverse_02(original_str):
+#     # Implied starting point
+#     return original_str[-1::-1]
+
+# def reverse_03(original_str):
+#     index = len(original_str)
+#     return_value = ''
+
+#     for i in range(index - 1, -1, -1):
+#        return_value += original_str[i]
+
+#     return return_value
+
+# # Demonstrate function
+# print(f"abcde: {reverse_03('abcde')}")
+
+# # Test code
+# input_string = 'abcde'
+
+# # # Uncomment for failing test code
+# # assert input_string == reverse_03(reverse_03(input_string)) + 'fail'
+
+# # Passing test code
+# assert input_string == reverse_03(reverse_03(input_string))
 
 
