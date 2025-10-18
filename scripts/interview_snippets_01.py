@@ -90,15 +90,15 @@ paragraph_02 ="So she was considering in her own mind (as well as she could," \
 ########################################################################
 
 
-def second_greater(start_int):
-    # Check if odd or even
-    if (start_int % 2 == 0):
-        return start_int + 3
-    else:
-        return start_int + 4
+# def second_greater(start_int):
+#     # Check if odd or even
+#     if (start_int % 2 == 0):
+#         return start_int + 3
+#     else:
+#         return start_int + 4
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    for n in [1, 4, 5]:
-        print(f"number: {n}  2d odd number: {second_greater(n)}")
+#     for n in [1, 4, 5]:
+#         print(f"number: {n}  2d odd number: {second_greater(n)}")
 
