@@ -36,3 +36,24 @@
 #     # 0! == 1 by definition
 #     # Correct values: 1, 6, 3628800
 #     print(f"n: {n}  factorial: {factorial_02(n)}")
+
+########################################################################
+# QUESTION: Demonstrate bubble sort                                    #
+########################################################################
+
+# import random
+
+# def bubble(unsorted_list):
+#     num_elements = len(unsorted_list)
+#     for i in range(num_elements - 0):
+#         print(unsorted_list)
+#         for j in range(num_elements - i - 1):
+#             if unsorted_list[j] > unsorted_list[j + 1]:
+#                 unsorted_list[j], unsorted_list[j + 1] = unsorted_list[j + 1], unsorted_list[j]
+
+# # Create some sample data
+# unsorted = [random.randint(0,100) for _ in range(10) ]
+
+# # Sort the data
+# bubble(unsorted)
+
