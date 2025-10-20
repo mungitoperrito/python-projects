@@ -1,0 +1,16 @@
+echo "Create virtual environment"
+pyenv virtualenv 3.12.11 translate
+pyenv activate translate
+
+echo "Update pip"
+$(which python) -m pip install --upgrade pip
+
+# On Ubunutu install the portaudio dev package
+sudo apt install portaudio19-dev
+
+echo "Install python dependencies"
+$(pyenv which pip) install googletrans
+$(pyenv which pip) install gTTS
+$(pyenv which pip) install httpx
+$(pyenv which pip) install SpeechRecognition
+$(pyenv which pip) install pyaudio
