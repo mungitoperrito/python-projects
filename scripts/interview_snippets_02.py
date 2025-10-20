@@ -57,3 +57,41 @@
 # # Sort the data
 # bubble(unsorted)
 
+
+########################################################################
+# QUESTION: Remove list duplicates                                     #
+########################################################################
+
+import random
+from collections import defaultdict
+
+# def deduplicate_01(dups_list):
+#     # Convert to set to remove duplicates
+#     # Convert back to list to maintain input type
+#     return list(set(dups_list))
+
+
+# def deduplicate_02(dups_list):
+#     # Bad, requires many searches of new_list
+#     new_list = []
+#     for element in dups_list:
+#         if element not in new_list:
+#             new_list.append(element)
+
+#     return new_list
+
+# def deduplicate_03(dups_list):
+
+#     element_dict = defaultdict(int)
+
+#     for element in dups_list:
+#        element_dict[element] += 1
+
+#     # Covert dict_keys type to list: dict_keys([1, 0, 2, 3, 5, 4])
+#     return list(element_dict.keys())
+
+# # Create a list with some duplicated values
+# duplicated = [random.randint(0,5) for _ in range(10) ]
+
+# print(f'duplicated: {duplicated}')
+# print(f'de-duplicated: {deduplicate_03(duplicated)}')
