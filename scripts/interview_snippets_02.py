@@ -80,18 +80,18 @@ from collections import defaultdict
 
 #     return new_list
 
-def deduplicate_03(dups_list):
+# def deduplicate_03(dups_list):
 
-    element_dict = defaultdict(int)
+#     element_dict = defaultdict(int)
 
-    for element in dups_list:
-       element_dict[element] += 1
+#     for element in dups_list:
+#        element_dict[element] += 1
 
-    # Covert dict_keys type to list: dict_keys([1, 0, 2, 3, 5, 4])
-    return list(element_dict.keys())
+#     # Covert dict_keys type to list: dict_keys([1, 0, 2, 3, 5, 4])
+#     return list(element_dict.keys())
 
-# Create a list with some duplicated values
-duplicated = [random.randint(0,5) for _ in range(10) ]
+# # Create a list with some duplicated values
+# duplicated = [random.randint(0,5) for _ in range(10) ]
 
-print(f'duplicated: {duplicated}')
-print(f'de-duplicated: {deduplicate_03(duplicated)}')
+# print(f'duplicated: {duplicated}')
+# print(f'de-duplicated: {deduplicate_03(duplicated)}')
