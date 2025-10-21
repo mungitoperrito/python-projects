@@ -1,4 +1,4 @@
-import googletrans
+import googletrans as gt
 import os
 import speech_recognition as sr
 
