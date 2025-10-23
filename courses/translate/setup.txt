@@ -9,8 +9,17 @@ $(which python) -m pip install --upgrade pip
 sudo apt install portaudio19-dev
 
 echo "Install python dependencies"
-$(pyenv which pip) install googletrans
+$(pyenv which pip) install googletrans==4.0.0-rc1
 $(pyenv which pip) install gTTS
 $(pyenv which pip) install httpx
 $(pyenv which pip) install SpeechRecognition
 $(pyenv which pip) install pyaudio
+
+
+
+# googletrans==4.0.0-rc1 fixes problem with translator.detect
+#    AttributeError: 'coroutine' object has no attribute 'text'
+#    sys:1: RuntimeWarning: coroutine 'Translator.detect' was never awaited
+#
+# More recent versions of googletrans are async and require a different
+#    coding style.
