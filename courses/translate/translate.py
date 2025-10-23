@@ -47,3 +47,8 @@ print(f"LANG: {lang}")
 data = translator.translate(recorded_audio, src=input_lang, dest=output_lang)
 text_translated = data.text
 print(f"TRANSLATED: {text_translated}")
+
+# Save and speak the text
+speak = gTTS(text=text_translated, lang=output_lang, slow=False)
+speak.save("translated_audio.mp3")
+os.system("start translated_audio.mp3")
