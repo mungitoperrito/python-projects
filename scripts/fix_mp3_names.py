@@ -11,18 +11,19 @@ import re
 # Words that have special capitalization
 cap_words = {
     "1st":"1st", "2d":"2d", "2nd":"2nd", "3rd":"3rd", "4th":"4th",
-    "10cc":"10CC", "120z":"12oz", "13th":"13th", "31st":"31st",
-    "49th":"49th", "101ers":"101ers",
-    "40s":"40s", "50s":"50s", "60s":"60s", "70s":"70s", "80s":"80s",
+    "13th":"13th", "31st":"31st", "49th":"49th",
+    "30s":"30s", "40s":"40s", "50s":"50s",
+    "60s":"60s", "70s":"70s", "80s":"80s",
     "1910s":"1910s", "1920s":"1920s", "1930s":"1930s", "1940s":"1940s",
     "1950s":"1950s", "1960s":"1960s", "1970s":"1970s", "1980s":"1980s",
-    "1990s":"1990s", "5.6.7.8s":"5.6.7.8s",
+    "1990s":"1990s",
+    "5.6.7.8s":"5.6.7.8s","10cc":"10CC", "120z":"12oz", "101ers":"101ers",
     "abba":"ABBA", "abc":"ABC", "acdc":"ACDC", "adk":"ADK", "afi":"AFI",
     "afu":"AFU", "ags":"AGs","atp":"ATP",
     "albumartlarge.jpg":"AlbumArtLarge.jpg",
     "albumartsmall.jpg":"AlbumArtSmall.jpg",
-    "bap":"BAP", "bbq":"BBQ", "boa":"BOA", "b.u.h":"BUH", "buh":"BUH",
-    "bwv":"BWV",
+    "b-52s":"B-52s", "bap":"BAP", "bbq":"BBQ", "boa":"BOA", "br5-49":"BR5-49", "brmc":"BRMC",
+    "bt":"BT", "bto":"BTO", "b.u.h":"BUH", "buh":"BUH", "bwv":"BWV",
     "cd":"CD", "cd1":"CD1", "cd2":"CD2", "cd3":"CD3",
     "ca":"CA", "cbc":"CBC", "cbgb":"CBGB", "cpe":"CPE",
     "cbgbs":"CBGBs", "cbmt":"CBMT", "cia":"CIA", "cmx":"CMX", "cpu":"CPU",
@@ -32,21 +33,31 @@ cap_words = {
     "ep":"EP",
     "fod":"FOD",
     "ii":"II", "iii":"III", "iv":"IV", "vi":"VI",
+    "ii.mp3":"II.mp3", "iii.mp3":"III.mp3", "iv.mp3":"IV.mp3",
     "vii":"VII", "viii":"VIII", "ix":"IX",
     "jfa":"JFA",
     "kc":"KC", "kez":"KEZ", "kxlu":"KXLU", "kmc":"KMC", "kmdfm":"KMDFM",
     "lp":"LP", "lmfao":"LMFAO",
-    "mc5":"MC5", "mdc":"MDC", "mh":"MH", "mia":"MIA",
+    "mc5":"MC5", "mdc":"MDC", "mgs":"MGs", "mh":"MH", "mia":"MIA", "mph":"MPH",
     "nofx":"NOFX", "nota":"NOTA", "nrbq":"NRBQ", "nrm":"NRM", "nsync":"NYSNC",
-    "nwa":"NWA", "nj":"NJ", "ny":"NY",
+    "nwa":"NWA", "nj":"NJ", "ny":"NY", "nyhc":"NYHC",
     "od":"OD",
     "ped":"PED", "pdq":"PDQ", "pox":"POX", "ptl":"PTL",
     "r.e.m.":"REM", "rpm":"RPM",
-    "t.s.o.l":"TSOL", "tsol":"TSOL",
+    "t.s.o.l":"TSOL", "tsol":"TSOL", "tv":"TV",
     "u.f.o":"UFO", "uk":"UK", "usa":"USA",
     "vs":"vs",
-    "wmbr":"WMBR", "wrsu":"WRSU",
+    "wmbr":"WMBR", "wnyu":"WNYU",  "wrsu":"WRSU",
     }
+
+# Strings that span a space character
+contractions = {
+    "Ain T ":"Aint ", "Can T ":"Cant ", "Don T ":"Dont ",
+    "I M ":"Im ", "I Ve ":"Ive", "La Guns":"LA Guns",  " O ":"-O-",
+    " S ":"s ", "Sr 71":"SR71",
+    "Won T ":"Wont ", "You Re ":"Youre "
+    }
+
 
 #################
 ### FUNCTIONS ###
@@ -73,6 +84,22 @@ def make_common_changes(name):
     name = name.title()
 
     # Fix special capitalization
+    name = fix_special_capitalization(name)
+
+    # Fix contractions
+    for c in contractions.keys():
+        name = name.replace(c, contractions[c])
+
+    # Fix Mc Mac
+    name = fix_mc_mac(name)
+
+    # Compress extra white space
+    name = ' '.join(name.split())
+
+    return name
+
+
+def fix_special_capitalization(name):
     words = name.split()
     new_name = ''
     for w in words:
@@ -81,18 +108,24 @@ def make_common_changes(name):
         new_name += ' ' + w
     name = new_name
 
-    # Fix contractions
-    contractions = {
-        "Ain T ":"Aint ", "Can T ":"Cant ", "Don T ":"Dont ",
-        "I M ":"Im ", "I Ve ":"Ive", "La Guns":"LA Guns",  " O ":"-O-",
-        " S ":"s ", "Sr 71":"SR71",
-        "Won T ":"Wont ", "You Re ":"Youre "
-        }
-    for c in contractions.keys():
-        name = name.replace(c, contractions[c])
+    return name
 
-    # Compress extra white space
-    name = ' '.join(name.split())
+
+def fix_mc_mac(name):
+    def replace_upper(match):
+        return match.group(1) + match.group(2).upper()
+
+    name = re.sub("(Mc)([a-z])", replace_upper, name)
+    name = re.sub("(Mac)([a-z])", replace_upper, name)
+
+    # Exceptions
+    name = re.sub("MacHine", "Machine", name)
+    name = re.sub("MacHiavelli", "Machiavelli", name)
+    name = re.sub("MacH ", "Mach ", name)
+    name = re.sub("MacHo ", "Macho ", name)
+    name = re.sub("MacRo", "Macro", name)
+    name = re.sub("MacK ", "Mack ", name)
+    name = re.sub("MacKenzie", "Mackenzie", name)
 
     return name
 
@@ -130,6 +163,8 @@ def update_file_names(name):
             # Check lowercase, Windows isn't case sensitive
             if old_name.lower() != name.lower():
                 new_path_and_name += ".DUP_FILE_NAME"
+                if extension == ".mp3":
+                    new_path_and_name += ".mp3"
                 print(f"FILE DUP: {new_path_and_name}")
 
         os.rename(old_path_and_name, new_path_and_name)
