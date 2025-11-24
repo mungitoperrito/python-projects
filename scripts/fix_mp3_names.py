@@ -13,20 +13,39 @@ cap_words = {
     "1st":"1st", "2d":"2d", "2nd":"2nd", "3rd":"3rd", "4th":"4th",
     "10cc":"10CC", "120z":"12oz", "13th":"13th", "31st":"31st",
     "49th":"49th", "101ers":"101ers",
+    "40s":"40s", "50s":"50s", "60s":"60s", "70s":"70s", "80s":"80s",
     "1910s":"1910s", "1920s":"1920s", "1930s":"1930s", "1940s":"1940s",
     "1950s":"1950s", "1960s":"1960s", "1970s":"1970s", "1980s":"1980s",
-    "1990s":"1990s",
-    "acdc":"ACDC", "afi":"AFI", "afu":"AFU", "ags":"AGs",
+    "1990s":"1990s", "5.6.7.8s":"5.6.7.8s",
+    "abba":"ABBA", "abc":"ABC", "acdc":"ACDC", "adk":"ADK", "afi":"AFI",
+    "afu":"AFU", "ags":"AGs","atp":"ATP",
     "albumartlarge.jpg":"AlbumArtLarge.jpg",
     "albumartsmall.jpg":"AlbumArtSmall.jpg",
-    "bap":"BAP", "bbq":"BBQ", "b.u.h":"BUH",
-    "cd1":"CD1", "cd2":"CD2", "cd3":"CD3",
-    "dbs":"DBs", "dj":"DJ", "djs":"DJs",
+    "bap":"BAP", "bbq":"BBQ", "boa":"BOA", "b.u.h":"BUH", "buh":"BUH",
+    "bwv":"BWV",
+    "cd":"CD", "cd1":"CD1", "cd2":"CD2", "cd3":"CD3",
+    "ca":"CA", "cbc":"CBC", "cbgb":"CBGB", "cpe":"CPE",
+    "cbgbs":"CBGBs", "cbmt":"CBMT", "cia":"CIA", "cmx":"CMX", "cpu":"CPU",
+    "daf":"DAF", "dbs":"DBs", "ddt":"DDT", "dfl":"DFL", "dhj":"DHJ", "di":"DI",
+    "dj":"DJ", "djs":"DJs", "dlg":"DLG", "dmz":"DMZ", "doa":"DOA",
+    "dnce":"DNCE", "dri":"DRI",
     "ep":"EP",
-    "kez":"KEZ", "kxlu":"KXLU",
-    "lp":"LP",
-    "mh":"MH",
-    "wrsu":"WRSU"
+    "fod":"FOD",
+    "ii":"II", "iii":"III", "iv":"IV", "vi":"VI",
+    "vii":"VII", "viii":"VIII", "ix":"IX",
+    "jfa":"JFA",
+    "kc":"KC", "kez":"KEZ", "kxlu":"KXLU", "kmc":"KMC", "kmdfm":"KMDFM",
+    "lp":"LP", "lmfao":"LMFAO",
+    "mc5":"MC5", "mdc":"MDC", "mh":"MH", "mia":"MIA",
+    "nofx":"NOFX", "nota":"NOTA", "nrbq":"NRBQ", "nrm":"NRM", "nsync":"NYSNC",
+    "nwa":"NWA", "nj":"NJ", "ny":"NY",
+    "od":"OD",
+    "ped":"PED", "pdq":"PDQ", "pox":"POX", "ptl":"PTL",
+    "r.e.m.":"REM", "rpm":"RPM",
+    "t.s.o.l":"TSOL", "tsol":"TSOL",
+    "u.f.o":"UFO", "uk":"UK", "usa":"USA",
+    "vs":"vs",
+    "wmbr":"WMBR", "wrsu":"WRSU",
     }
 
 #################
@@ -47,6 +66,9 @@ def make_common_changes(name):
     for c in remove_char:
        name = name.replace(c, ' ')
 
+    # Change & to and
+    name = name.replace('&', 'and')
+
     # Title case for body
     name = name.title()
 
@@ -61,8 +83,10 @@ def make_common_changes(name):
 
     # Fix contractions
     contractions = {
-        "Ain T ":"Aint ", "Can T ":"Cant ", "Don T ":"Dont ", "I M ":"Im ",
-        "I Ve ":"Ive", " O ":"-O-", "Won T ":"Wont ", "You Re ":"Youre "
+        "Ain T ":"Aint ", "Can T ":"Cant ", "Don T ":"Dont ",
+        "I M ":"Im ", "I Ve ":"Ive", "La Guns":"LA Guns",  " O ":"-O-",
+        " S ":"s ", "Sr 71":"SR71",
+        "Won T ":"Wont ", "You Re ":"Youre "
         }
     for c in contractions.keys():
         name = name.replace(c, contractions[c])
@@ -86,7 +110,8 @@ def update_file_names(name):
     name = make_common_changes(name)
 
     # Delete unwanted art ID strings
-    name = re.sub('_\{.*\}_', '', name)
+    if "lbum" in name:
+        name = re.sub('\{.*\}', '', name)
 
     # Title case for body, extension lower case
     base, extension = os.path.splitext(name)
@@ -105,6 +130,7 @@ def update_file_names(name):
             # Check lowercase, Windows isn't case sensitive
             if old_name.lower() != name.lower():
                 new_path_and_name += ".DUP_FILE_NAME"
+                print(f"FILE DUP: {new_path_and_name}")
 
         os.rename(old_path_and_name, new_path_and_name)
 
@@ -121,6 +147,11 @@ def update_dir_names(name):
     # Changes that are the same for files and dirs
     name = make_common_changes(name)
 
+    # Capitalize NOW
+    match = re.search('Now \d', name)
+    if match:
+        name = name.replace('Now ', 'NOW ')
+
     # Full path for dir
     new_path_and_name = os.path.join(old_path, name)
 
@@ -133,6 +164,7 @@ def update_dir_names(name):
             # Check lowercase, Windows isn't case sensitive
             if old_name.lower() != name.lower():
                 new_path_and_name += ".DUP_DIR_NAME"
+                print(f"DIR DUP: {new_path_and_name}")
 
         os.rename(old_path_and_name, new_path_and_name)
 
