@@ -10,55 +10,62 @@ import re
 
 # Words that have special capitalization
 cap_words = {
-    "1st":"1st", "2d":"2d", "2nd":"2nd", "3rd":"3rd", "4th":"4th",
+    "1st":"1st", "2d":"2d", "2nd":"2nd", "3rd":"3rd", "4th":"4th", "5th":"5th",
     "13th":"13th", "31st":"31st", "49th":"49th",
-    "30s":"30s", "40s":"40s", "50s":"50s",
-    "1910s":"1910s", "1920s":"1920s", "1930s":"1930s", "1940s":"1940s",
-    "1950s":"1950s", "1960s":"1960s", "1970s":"1970s", "1980s":"1980s",
-    "1990s":"1990s",
+    "1910s":"1910s", "1920s":"1920s", "1930s":"1930s",
+    "1940s":"1940s", "1950s":"1950s", "1960s":"1960s",
+    "1970s":"1970s", "1980s":"1980s", "1990s":"1990s",
     "5.6.7.8s":"5.6.7.8s","10cc":"10CC", "120z":"12oz", "101ers":"101ers",
+    "ii":"II", "iii":"III", "iv":"IV", "vi":"VI",
+    "vii":"VII", "viii":"VIII", "ix":"IX",
+    "ii.mp3":"II.mp3", "iii.mp3":"III.mp3", "iv.mp3":"IV.mp3",
     "abba":"ABBA", "abc":"ABC", "acdc":"ACDC", "adk":"ADK", "afi":"AFI",
     "afu":"AFU", "ags":"AGs","atp":"ATP",
+    "albumart.jpg":"AlbumArt.jpg",
     "albumartlarge.jpg":"AlbumArtLarge.jpg",
     "albumartsmall.jpg":"AlbumArtSmall.jpg",
-    "bb":"BB", "b-52s":"B-52s", "bap":"BAP", "bbq":"BBQ", "boa":"BOA", "br5-49":"BR5-49",
-    "brmc":"BRMC", "bt":"BT", "bto":"BTO", "b.u.h":"BUH", "buh":"BUH",
-    "bwv":"BWV",
+    "bb":"BB", "b-52s":"B-52s", "bap":"BAP", "bbq":"BBQ", "boa":"BOA",
+    "br5-49":"BR5-49", "brmc":"BRMC", "bt":"BT", "bto":"BTO", "b.u.h":"BUH",
+    "buh":"BUH", "bwv":"BWV",
     "cd":"CD", "cd1":"CD1", "cd2":"CD2", "cd3":"CD3",
     "ca":"CA", "cbc":"CBC", "cbgb":"CBGB",
     "cbgbs":"CBGBs", "cbmt":"CBMT", "cia":"CIA", "civ":"CIV", "cky":"CKY",
     "cmx":"CMX", "cpe":"CPE", "cpu":"CPU", "cpw":"CPW",
-    "daf":"DAF", "dbs":"DBs", "ddt":"DDT", "dfl":"DFL", "dhj":"DHJ", "di":"DI", "diy":"DIY",
-    "dj":"DJ", "djs":"DJs", "dlg":"DLG", "dmz":"DMZ", "doa":"DOA",
-    "dnce":"DNCE", "dri":"DRI",
-    "ep":"EP",
-    "fod":"FOD",
-    "ii":"II", "iii":"III", "iv":"IV", "vi":"VI",
-    "vii":"VII", "viii":"VIII", "ix":"IX",
-    "ii.mp3":"II.mp3", "iii.mp3":"III.mp3", "iv.mp3":"IV.mp3",
-    "jfa":"JFA",
+    "daf":"DAF", "dbs":"DBs", "ddt":"DDT", "dfl":"DFL", "dhj":"DHJ", "di":"DI",
+    "diy":"DIY", "dj":"DJ", "djs":"DJs", "dlg":"DLG", "dmz":"DMZ", "dna":"DNA",
+    "doa":"DOA", "doi":"DOI", "dm":"DM", "dnce":"DNCE", "dr.":"Dr", "dri":"DRI",
+    "dsn":"DSN",
+    "ecfu":"ECFU", "elo":"ELO", "ep":"EP", "est":"EST",
+    "fm":"FM", "fod":"FOD", "fus":"FUs",
+    "gbh":"GBH", "gc5":"GC5", "gg":"GG", "gh":"GH",
+    "h20":"H20",
+    "jc":"JC", "jfa":"JFA", "jj":"JJ",
     "kc":"KC", "kez":"KEZ", "kxlu":"KXLU", "kmc":"KMC", "kmdfm":"KMDFM",
-    "lp":"LP", "lmfao":"LMFAO",
-    "mc5":"MC5", "mdc":"MDC", "mgs":"MGs", "mh":"MH", "mia":"MIA", "mph":"MPH",
+    "lp":"LP", "lmfao":"LMFAO", "lsd":"LSD",
+    "mc5":"MC5", "mc":"MC", "mdc":"MDC", "mgs":"MGs", "mh":"MH", "mia":"MIA", "mph":"MPH",
     "nofx":"NOFX", "nota":"NOTA", "nrbq":"NRBQ", "nrm":"NRM", "nsync":"NYSNC",
-    "nwa":"NWA", "nj":"NJ", "ny":"NY", "nyhc":"NYHC",
+    "nwa":"NWA", "nj":"NJ", "nrg":"NRG", "ny":"NY", "nyc":"NYC", "nyhc":"NYHC",
     "od":"OD",
-    "ped":"PED", "pdq":"PDQ", "pox":"POX", "ptl":"PTL",
-    "r.e.m.":"REM", "rpm":"RPM",
-    "t.s.o.l":"TSOL", "tsol":"TSOL", "tv":"TV",
+    "ped":"PED", "pdq":"PDQ", "plc":"PLC", "pox":"POX", "ptl":"PTL",
+    "rb":"RB", "r.e.m.":"REM", "reo":"REO", "roq":"ROQ", "rpm":"RPM", "rtl":"RTL",
+    "stp":"STP",
+    "t.s.o.l":"TSOL", "tsol":"TSOL", "tv":"TV", "tx":"TX",
     "u.f.o":"UFO", "uk":"UK", "usa":"USA",
     "vs":"vs",
-    "wmbr":"WMBR", "wnyu":"WNYU",  "wrsu":"WRSU",
     }
 
-# Strings that span a space character
+# Strings that span a space character. Common ending patterns get attached to
+#   dates and file extensions: WRSU..1986, Oakland CA.mp3
 contractions = {
-    "60s":"60s", "70s":"70s", "80s":"80s",
-    "Ain T ":"Aint ", "Can T ":"Cant ", "Don T ":"Dont ",
-    "I M ":"Im ", "I Ve ":"Ive", "We Re ":"Were ", "Won T ":"Wont ",
+    "20S":"20s", "30S":"30s", "40S":"40s", "50S":"50s",
+    "60S":"60s", "70S":"70s", "80S":"80s", "90S":"90s",
+    "Ain T ":"Aint ", "Can T ":"Cant ", "Don T ":"Dont ", "I M ":"Im ",
+    "I Ve ":"Ive ", "We Re ":"Were ", "Who S ":"Whos ", "Won T ":"Wont ",
     "You Re ":"Youre ",
     "La Guns":"LA Guns", " O ":"-O-",
-    " S ":"s ", "Sr 71":"SR71"
+    " S ":"s ", "Sr 71":"SR71",
+    " Ca.":" CA.", " Ma.":" MA.", " Mi.":" MI.", " Ny.":" NY.",
+    "Wmbr":"WMBR", "Wfmu":"WFMU", "Wnyu":"WNYU",  "Wrsu":" WRSU"
     }
 
 
@@ -76,7 +83,7 @@ def make_common_changes(name):
        name = name.replace(c, '')
 
     # Change unwanted characters to blanks
-    remove_char = "@#_\(\)"
+    remove_char = "@#_\(\);"
     for c in remove_char:
        name = name.replace(c, ' ')
 
@@ -95,6 +102,9 @@ def make_common_changes(name):
 
     # Fix Mc Mac
     name = fix_mc_mac(name)
+
+    # Fix date format
+    name = fix_date_format(name)
 
     # Compress extra white space
     name = ' '.join(name.split())
@@ -129,6 +139,25 @@ def fix_mc_mac(name):
     name = re.sub("MacRo", "Macro", name)
     name = re.sub("MacK ", "Mack ", name)
     name = re.sub("MacKenzie", "Mackenzie", name)
+
+    return name
+
+
+def fix_date_format(name):
+    def replace_date(match):
+        year = match.group(3)
+        month = match.group(1)
+        day = match.group(2)
+
+        if len(month) == 1:
+            month = "0" + month
+
+        if len(day) == 1:
+            day = "0" + day
+
+        return f"{year}-{month}-{day}"
+
+    name = re.sub("(\d+)[.-](\d+)[.-](\d\d\d\d)", replace_date, name)
 
     return name
 
