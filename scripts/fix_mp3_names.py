@@ -13,7 +13,6 @@ cap_words = {
     "1st":"1st", "2d":"2d", "2nd":"2nd", "3rd":"3rd", "4th":"4th",
     "13th":"13th", "31st":"31st", "49th":"49th",
     "30s":"30s", "40s":"40s", "50s":"50s",
-    "60s":"60s", "70s":"70s", "80s":"80s",
     "1910s":"1910s", "1920s":"1920s", "1930s":"1930s", "1940s":"1940s",
     "1950s":"1950s", "1960s":"1960s", "1970s":"1970s", "1980s":"1980s",
     "1990s":"1990s",
@@ -22,19 +21,21 @@ cap_words = {
     "afu":"AFU", "ags":"AGs","atp":"ATP",
     "albumartlarge.jpg":"AlbumArtLarge.jpg",
     "albumartsmall.jpg":"AlbumArtSmall.jpg",
-    "b-52s":"B-52s", "bap":"BAP", "bbq":"BBQ", "boa":"BOA", "br5-49":"BR5-49", "brmc":"BRMC",
-    "bt":"BT", "bto":"BTO", "b.u.h":"BUH", "buh":"BUH", "bwv":"BWV",
+    "bb":"BB", "b-52s":"B-52s", "bap":"BAP", "bbq":"BBQ", "boa":"BOA", "br5-49":"BR5-49",
+    "brmc":"BRMC", "bt":"BT", "bto":"BTO", "b.u.h":"BUH", "buh":"BUH",
+    "bwv":"BWV",
     "cd":"CD", "cd1":"CD1", "cd2":"CD2", "cd3":"CD3",
-    "ca":"CA", "cbc":"CBC", "cbgb":"CBGB", "cpe":"CPE",
-    "cbgbs":"CBGBs", "cbmt":"CBMT", "cia":"CIA", "cmx":"CMX", "cpu":"CPU",
-    "daf":"DAF", "dbs":"DBs", "ddt":"DDT", "dfl":"DFL", "dhj":"DHJ", "di":"DI",
+    "ca":"CA", "cbc":"CBC", "cbgb":"CBGB",
+    "cbgbs":"CBGBs", "cbmt":"CBMT", "cia":"CIA", "civ":"CIV", "cky":"CKY",
+    "cmx":"CMX", "cpe":"CPE", "cpu":"CPU", "cpw":"CPW",
+    "daf":"DAF", "dbs":"DBs", "ddt":"DDT", "dfl":"DFL", "dhj":"DHJ", "di":"DI", "diy":"DIY",
     "dj":"DJ", "djs":"DJs", "dlg":"DLG", "dmz":"DMZ", "doa":"DOA",
     "dnce":"DNCE", "dri":"DRI",
     "ep":"EP",
     "fod":"FOD",
     "ii":"II", "iii":"III", "iv":"IV", "vi":"VI",
-    "ii.mp3":"II.mp3", "iii.mp3":"III.mp3", "iv.mp3":"IV.mp3",
     "vii":"VII", "viii":"VIII", "ix":"IX",
+    "ii.mp3":"II.mp3", "iii.mp3":"III.mp3", "iv.mp3":"IV.mp3",
     "jfa":"JFA",
     "kc":"KC", "kez":"KEZ", "kxlu":"KXLU", "kmc":"KMC", "kmdfm":"KMDFM",
     "lp":"LP", "lmfao":"LMFAO",
@@ -52,10 +53,12 @@ cap_words = {
 
 # Strings that span a space character
 contractions = {
+    "60s":"60s", "70s":"70s", "80s":"80s",
     "Ain T ":"Aint ", "Can T ":"Cant ", "Don T ":"Dont ",
-    "I M ":"Im ", "I Ve ":"Ive", "La Guns":"LA Guns",  " O ":"-O-",
-    " S ":"s ", "Sr 71":"SR71",
-    "Won T ":"Wont ", "You Re ":"Youre "
+    "I M ":"Im ", "I Ve ":"Ive", "We Re ":"Were ", "Won T ":"Wont ",
+    "You Re ":"Youre ",
+    "La Guns":"LA Guns", " O ":"-O-",
+    " S ":"s ", "Sr 71":"SR71"
     }
 
 
@@ -143,8 +146,10 @@ def update_file_names(name):
     name = make_common_changes(name)
 
     # Delete unwanted art ID strings
+    #    Form 1: AlbumArt{1234}Small.jpg
+    #    Form 2: AlbumArt_{1234}_Small.jpg
     if "lbum" in name:
-        name = re.sub('\{.*\}', '', name)
+        name = re.sub('(_|\s)*\{.*\}(_|\s)*', '', name)
 
     # Title case for body, extension lower case
     base, extension = os.path.splitext(name)
@@ -160,14 +165,32 @@ def update_file_names(name):
     # Uncomment to update files
     if old_name != name:
         if os.path.exists(new_path_and_name):
+
             # Check lowercase, Windows isn't case sensitive
             if old_name.lower() != name.lower():
-                new_path_and_name += ".DUP_FILE_NAME"
-                if extension == ".mp3":
-                    new_path_and_name += ".mp3"
-                print(f"FILE DUP: {new_path_and_name}")
 
-        os.rename(old_path_and_name, new_path_and_name)
+                # Drop duplicated album art files
+                if re.match("Album.*jpg", name):
+                    try:
+                        os.remove(old_path_and_name)
+                    except Exception as e:
+                        print(f"ERR: Can't remove {old_path_and_name}")
+                        print(f"ERR: {e}")
+                else:
+                    # Label potential duplicate files
+                    new_path_and_name += ".DUP_FILE_NAME"
+
+                    # mp3 extension improves detailed display in Windows
+                    if extension == ".mp3":
+                        new_path_and_name += ".mp3"
+                    print(f"FILE DUP: {new_path_and_name}")
+
+        try:
+            if os.path.exists(old_path_and_name):
+                os.rename(old_path_and_name, new_path_and_name)
+        except Exception as e:
+            print(f"ERR: Can't rename {old_path_and_name}  {new_path_and_name}")
+            print(f"ERR: {e}")
 
 
 def update_dir_names(name):
