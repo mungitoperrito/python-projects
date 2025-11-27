@@ -12,6 +12,7 @@ import re
 cap_words = {
     "1st":"1st", "2d":"2d", "2nd":"2nd", "3rd":"3rd", "4th":"4th", "5th":"5th",
     "13th":"13th", "31st":"31st", "49th":"49th", "69th":"69th",
+    "1s":"1s", "2s":"2s", "3s":"3s", "4s":"4s", "5s":"5s", "6s":"6s", "7s":"7s",
     "1910s":"1910s", "1920s":"1920s", "1930s":"1930s",
     "1940s":"1940s", "1950s":"1950s", "1960s":"1960s",
     "1970s":"1970s", "1980s":"1980s", "1990s":"1990s",
@@ -29,8 +30,8 @@ cap_words = {
     "b.u.h":"BUH", "buh":"BUH", "bwv":"BWV",
     "cd":"CD", "cd1":"CD1", "cd2":"CD2", "cd3":"CD3",
     "ca":"CA", "cbc":"CBC", "cbgb":"CBGB", "cbgbs":"CBGBs", "cbmt":"CBMT",
-    "cia":"CIA", "civ":"CIV", "cky":"CKY", "cm":"CM", "cmx":"CMX", "cpe":"CPE",
-    "cpu":"CPU", "cpw":"CPW",
+    "cc":"CC", "cia":"CIA", "civ":"CIV", "cky":"CKY", "cm":"CM", "cmx":"CMX",
+    "cpe":"CPE", "cpu":"CPU", "cpw":"CPW",
     "daf":"DAF", "dbs":"DBs", "ddt":"DDT", "dfl":"DFL", "dhj":"DHJ", "di":"DI",
     "diy":"DIY", "dj":"DJ", "djs":"DJs", "dl":"DL", "dlg":"DLG", "dmz":"DMZ",
     "dna":"DNA", "doa":"DOA", "doi":"DOI", "dm":"DM", "dnce":"DNCE", "dr.":"Dr",
