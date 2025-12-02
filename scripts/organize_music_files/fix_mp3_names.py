@@ -18,7 +18,7 @@ cap_words = {
     "1990s":"1990s", "2000s":"2000s", "2010s":"2010s",
     "5.6.7.8s":"5.6.7.8s","10cc":"10CC", "120z":"12oz", "101ers":"101ers",
     "ii":"II", "iii":"III", "iv":"IV", "vi":"VI",
-    "vii":"VII", "viii":"VIII", "ix":"IX",
+    "vii":"VII", "viii":"VIII", "ix":"IX", "xiv":"XIV",
     "ii.mp3":"II.mp3", "iii.mp3":"III.mp3", "iv.mp3":"IV.mp3",
     "abba":"ABBA", "abc":"ABC", "acdc":"ACDC", "ad":"AD", "adk":"ADK",
     "afi":"AFI", "afu":"AFU", "ags":"AGs","atp":"ATP",
@@ -31,41 +31,46 @@ cap_words = {
     "cd":"CD", "cd1":"CD1", "cd2":"CD2", "cd3":"CD3",
     "ca":"CA", "cbc":"CBC", "cbgb":"CBGB", "cbgbs":"CBGBs", "cbmt":"CBMT",
     "cc":"CC", "cia":"CIA", "civ":"CIV", "cky":"CKY", "cm":"CM", "cmx":"CMX",
-    "cpe":"CPE", "cpu":"CPU", "cpw":"CPW",
+    "cpe":"CPE", "cpu":"CPU", "cpw":"CPW", "cw":"CW",
     "daf":"DAF", "dbs":"DBs", "ddt":"DDT", "dfl":"DFL", "dhj":"DHJ", "di":"DI",
-    "diy":"DIY", "dj":"DJ", "djs":"DJs", "dl":"DL", "dlg":"DLG", "dmz":"DMZ",
-    "dna":"DNA", "doa":"DOA", "doi":"DOI", "dm":"DM", "dnce":"DNCE",
+    "diy":"DIY", "dj":"DJ", "djs":"DJs", "dl":"DL", "dlg":"DLG", "dmc":"DMC",
+    "dmz":"DMZ", "dna":"DNA", "doa":"DOA", "doi":"DOI", "dm":"DM",
+    "dnce":"DNCE",
     "dph":"DPH", "dr.":"Dr", "dri":"DRI", "dsn":"DSN",
-    "ec":"EC", "ecfu":"ECFU", "ef":"EF", "eg":"EG", "elo":"ELO", "emi":"EMI",
-    "ep":"EP", "est":"EST",
+    "ec":"EC", "ecfu":"ECFU", "ef":"EF", "eg":"EG", "ej":"EJ", "elo":"ELO",
+    "emi":"EMI", "ep":"EP", "est":"EST",
     "fb":"FB", "fm":"FM", "fod":"FOD", "fus":"FUs",
     "gbh":"GBH", "gc5":"GC5", "gg":"GG", "gh":"GH",
-    "h20":"H20",
+    "h20":"H20", "hwv":"HWV",
     "ibm":"IBM", "id":"ID", "inah":"INAH", "inxs":"INXS",
     "jb":"JB", "jbo":"JBO", "jc":"JC", "jd":"JD", "jfa":"JFA", "jj":"JJ",
+    "jls":"JLS", "jvk":"JVK", "jx":"JX",
     "kas":"KAS", "kc":"KC", "kez":"KEZ", "kgb":"KGB", "kkpa":"KKPA",
     "klf":"KLF", "kmc":"KMC", "kmdfm":"KMDFM", "ksu":"KSU", "kxlu":"KXLU",
     "lp":"LP", "lmfao":"LMFAO", "lsd":"LSD", "lse":"LSE", "ltd":"LTD",
     "mc5":"MC5", "mc":"MC", "mdc":"MDC", "mgs":"MGs", "mh":"MH", "mia":"MIA",
     "mod":"MOD", "mph":"MPH",
-    "nofx":"NOFX", "nota":"NOTA", "nrbq":"NRBQ", "nrm":"NRM", "nsync":"NYSNC",
+    "nc":"NC", "nofx":"NOFX", "nota":"NOTA", "nrbq":"NRBQ", "nrm":"NRM", "nsync":"NYSNC",
     "nwa":"NWA", "nj":"NJ", "nrg":"NRG", "ny":"NY", "nyc":"NYC", "nyhc":"NYHC",
-    "oclock":"OClock", "od":"OD", "oneal":"ONeal", "oquin":"OQuin",
+    "oclock":"OClock", "od":"OD", "oconnor":"OConnor", "oday":"ODay",
+    "odonnell":"ODonnell", "oneal":"ONeal", "oquin":"OQuin",
     "osullivan":"OSullivan",
     "pbr":"PBR", "ped":"PED", "pdq":"PDQ", "pil":"PIL", "plc":"PLC",
-    "pox":"POX", "ptl":"PTL",
+    "pox":"POX", "ptl":"PTL", "pva":"PVA", "pvc":"PVC",
     "rb":"RB", "r.e.m.":"REM", "rkl":"RKL", "reo":"REO", "roq":"ROQ",
-    "rnb":"RnB", "rpa":"RPA", "rpm":"RPM", "rtl":"RTL", "rtz":"RTZ", "ru":"RU",
-    "sh":"SH", "sig":"SIG", "smd":"SMD", "snfu":"SNFU", "sobo":"SOBO",
-    "sod":"SOD", "src":"SRC", "ssg":"SSG", "sst":"SST", "stp":"STP",
+    "rnb":"RnB", "rpa":"RPA", "rpm":"RPM", "rpms":"RPMS", "rtl":"RTL",
+    "rtz":"RTZ", "ru":"RU",
+    "sf":"SF", "sh":"SH", "sig":"SIG", "smd":"SMD", "snfu":"SNFU",
+    "sncc":"SNCC", "sobo":"SOBO", "sod":"SOD", "src":"SRC", "ss":"SS",
+    "ssg":"SSG", "sst":"SST", "stp":"STP",
     "ta80":"TA80", "tc":"TC", "tdk":"TDK", "tj":"TJ", "tnn":"TNN", "tns":"TNS",
     "tpk":"TPK", "tpu":"TPU", "t.s.o.l":"TSOL", "tsol":"TSOL", "tv":"TV",
     "tvo":"TVO", "tx":"TX", "tzn":"TZN",
     "u2":"U2", "ub40":"UB40", "udo":"UDO", "u.f.o":"UFO", "uk":"UK",
     "usa":"USA", "usmc":"USMC", "uxa":"UXA",
     "vs":"vs",
-    "wasp":"WASP", "wwi":"WWI", "wwii":"WWII",
-    "xtc":"XTC", "xxx":"XXX",
+    "wasp":"WASP", "wwi":"WWI", "wwii":"WWII", "wv":"WV",
+    "xtc":"XTC", "xxx":"XXX", "xcii":"XCII",
     "yr":"YR",
     "zz":"ZZ"
     }
@@ -79,17 +84,25 @@ contractions = {
     "I Ve ":"Ive ", "We Re ":"Were ", "Who S ":"Whos ", "Won T ":"Wont ",
     "You Re ":"Youre ",
     "La Guns":"LA Guns", "La Tour":"LA Tour",
-    "Mxpx":"MxPx",
+    "Mxpx":"MxPx", "MacUmba":"Macumba",
     " O ":"-O-",
     " S ":"s ", "Spn-X":"SPN-X", "Sr 71":"SR71",
     " Ca.":" CA.", " Ep.":" EP.", " Ma.":" MA.", " Mi.":" MI.", " Ms.":" MS.", " Ny.":" NY.",
     ".Cb ":".CB ", ".Ny ":".NY ",
     "Us Army":"US Army", "Us Bombs":"US Bombs", "Us Chaos":"US Chaos",
     "Us Marine":"US Marine", "Us Roughnecks":"US Roughnecks",
-    "Wmbr":"WMBR", "Wfmu":"WFMU", "Wnyu":"WNYU",  "Wrsu":" WRSU",
+    "Wmbr":"WMBR", "Wfmu":"WFMU", "Wnyu":"WNYU",  "Wrsu":" WRSU", "wpa":"WPA",
     "Xe-None":"Xe-NONE"
     }
 
+# Mac and Mc exceptions
+#   Teh function appends a word boundary marker after the search string
+mac_and_mc = {
+    "MacHine":"Machine", "MacHiavelli":"Machiavelli", "MacH":"Mach",
+    "MacHo":"Macho", "MacRo":"Macro", "MacK":"Mack", "MacKs":"Macks",
+    "Mackenzie":"MacKenzie", "MacC":"Macc", "MacEo":"Maceo",
+    "MacHucambos":"Machucambos", "MacS":"Macs"
+    }
 
 #################
 ### FUNCTIONS ###
@@ -154,13 +167,10 @@ def fix_mc_mac(name):
     name = re.sub("(Mac)([a-z])", replace_upper, name)
 
     # Exceptions
-    name = re.sub("MacHine", "Machine", name)
-    name = re.sub("MacHiavelli", "Machiavelli", name)
-    name = re.sub("MacH ", "Mach ", name)
-    name = re.sub("MacHo ", "Macho ", name)
-    name = re.sub("MacRo", "Macro", name)
-    name = re.sub("MacK ", "Mack ", name)
-    name = re.sub("MacKenzie", "Mackenzie", name)
+    for k,v in mac_and_mc.items():
+        pattern = k + "\\b"
+        name = re.sub(pattern, v, name)
+
 
     return name
 
@@ -211,7 +221,7 @@ def update_file_names(name):
     new_path_and_name = os.path.join(old_path, name)
 
     # # Uncomment to test changes
-    # print(f"FROM F: {old_name}  TO: {path_and_name}")
+    # print(f"FROM F: {old_name}  TO: {new_path_and_name}")
 
     # Uncomment to update files
     if old_name != name:
@@ -265,7 +275,7 @@ def update_dir_names(name):
     new_path_and_name = os.path.join(old_path, name)
 
     # # Uncomment to test changes
-    # print(f"FROM D: {old_name}    TO: {path_and_name}")
+    # print(f"FROM D: {old_name}    TO: {new_path_and_name}")
 
     # Uncomment to update directories
     if old_name != name:
